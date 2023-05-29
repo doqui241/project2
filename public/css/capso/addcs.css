@@ -1,0 +1,14 @@
+.buttoncs button{
+    width: 115px;
+    height: 48px;
+}
+.buttoncs .button1{
+    background: #FFF2E7;
+    /* Orange/$-Orange-400 */
+    
+    border: 1.5px solid #FF9138;
+    /* down */
+    
+    box-shadow: 0px 0px 6px #E7E9F2;
+    border-radius: 8px;
+}

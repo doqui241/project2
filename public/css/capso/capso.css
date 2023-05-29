@@ -1,0 +1,84 @@
+.capso{
+    display: flex;
+}
+.form-select{
+    box-sizing: border-box;
+
+    /* Auto layout */
+    
+    margin-right: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    gap: 24px;
+    width: 154px;
+    height: 44px;
+    left: 224px;
+    top: 184px;
+    
+    /* white */
+    
+    background: #FFFFFF;
+    /* Gray/$-gray-100 */
+    
+    border: 1.5px solid #D4D4D7;
+    border-radius: 8px;
+}
+
+
+.thoigiancs input{
+    box-sizing: border-box;
+
+/* Auto layout */
+
+width: 150px;
+height: 44px;
+padding: 8px 16px;
+gap: 8px;
+
+background: #FFFFFF;
+/* gray blue/gray 2 - stroke */
+
+border: 1.5px solid #D4D4D7;
+border-radius: 8px;
+}
+.thoigiancs{
+    margin-right: 25px;
+}
+
+
+.tukhoa input{
+    width: 240px;
+    height: 44px;
+}
+/* .nguoncap{
+    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    gap: 24px;
+    width: 154px;
+    height: 44px;
+    left: 224px;
+    top: 184px;    
+    background: #FFFFFF;  
+    border: 1.5px solid #D4D4D7;
+    border-radius: 8px;
+}
+.tinhtrang{
+    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    gap: 24px;
+    width: 154px;
+    height: 44px;
+    left: 224px;
+    top: 184px;
+    background: #FFFFFF;  
+    border: 1.5px solid #D4D4D7;
+    border-radius: 8px;
+} */

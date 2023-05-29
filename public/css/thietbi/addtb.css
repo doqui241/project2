@@ -1,0 +1,49 @@
+.form-addtb{
+    position: absolute;
+    width: 1252px;
+    height: 480px;
+
+    top: 156px;
+    
+    /* White */
+    
+    background: #FFFFFF;
+    /* Shadowbox */
+    
+    box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
+    border-radius: 16px;
+}
+.addtb-form{
+    width: 1252px;
+}
+.row input{
+padding: 10px 270px 10px 12px;
+gap: 10px;
+width: 580px;
+height: 44px;
+}
+.button button{
+    width: 147px;
+    height: 48px;
+    margin-top: 530px;
+    color: white;
+}
+.button .button1{
+    
+    width: 147px;
+    height: 48px;
+    margin-top: 530px;
+    /* Orange/$-Orange-50 */
+    
+    background: #FFF2E7;
+    /* Orange/$-Orange-400 */
+  
+    border: 1.5px solid #FF9138;
+    /* down */
+    
+    box-shadow: 0px 0px 6px #E7E9F2;
+    border-radius: 8px;
+}
+.button .button1 a{
+    color: #FF9138;
+}

@@ -1,0 +1,406 @@
+body{
+    width: 100%;
+    background-color: #F6F6F6;
+}
+.left{
+    position: absolute;
+width: 200px;
+height: 753px;
+left: 0px;
+top: 0px;
+    box-shadow: 0px 4px 6px rgba(219, 219, 219, 0.5);
+border-radius: 16px 0px 0px 16px;
+background-color: white;
+}
+
+.right{
+position: absolute;
+width: 401px;
+height: 753px;
+right: -15px;
+top: 0px;
+
+/* White */
+
+background: #FFFFFF;
+/* Dropdown */
+
+box-shadow: 0px 4px 6px rgba(219, 219, 219, 0.5);
+border-radius: 8px 0px 0px 8px;
+
+}
+
+
+.right h4{
+    position: absolute;
+    top:50px;
+    /* left:10px; */
+}
+.right .col-md-12{
+    width: 353px;
+height: 83px;
+background: #FFFFFF;
+box-shadow: 2px 2px 15px rgba(70, 64, 67, 0.1);
+border-radius: 12px;
+
+}
+.right .lich{
+width: 353px;
+height: 293px;
+
+background: #FFFFFF;
+/* Pink shadow */
+
+box-shadow: 2px 2px 15px rgba(70, 64, 67, 0.1);
+border-radius: 12px;
+}
+.right .row{
+    position: absolute;
+    top:120px;
+    width: 375px;
+}
+
+.noidung{
+    width: 1320px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 753px;
+    left: 200px;
+}
+.form-select{
+width: 300px;
+height: 44px;
+}
+.trangthai{
+    display: flex;
+}
+.trangthai p{
+height: 24px;
+left: 548.97px;
+top: 156px;
+
+/* 16/16 Semi */
+
+font-family: 'Nunito';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+
+
+/* Gray/$-gray-500 */
+
+color: #282739;
+}
+.trangthaihd{
+    margin-right: 24px;
+   
+}
+.form-select{
+    /* color: #FF7506; */
+    background-image: url();
+    /* Vector */
+
+    
+
+
+    
+}
+.trangthaikn{
+    margin-right: 188px;
+}
+.tk{
+    width: 300px;
+    height: 44px;
+    border: 1.5px solid #D4D4D7;
+    border-radius: 8px;
+    padding: 10px 16px 10px 12px;
+gap: 10px;
+}
+
+.user{
+    top: 50px;
+}
+
+.user svg{
+    position: absolute;
+width: 32px;
+height: 32px;
+right: 260px;
+top: 28px;
+
+/* Orange/$-Orange-50 */
+
+background: #FFF2E7;
+border-radius: 32px;
+}
+.user img{
+position: absolute;
+width: 40px;
+height: 40px;
+right: 196px;
+top: 24px;
+border-radius: 48px;
+object-fit: cover;
+}
+
+
+.user p{
+position: absolute;
+width: 47px;
+height: 18px;
+right: 141px;
+top: 24px;
+
+/* 12/12 Reg */
+
+font-family: 'Nunito';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 18px;
+/* identical to box height, or 150% */
+
+
+/* Gray/$-gray-300 */
+
+color: #7E7D88;
+}
+
+.user .tennd{
+position: absolute;
+width: 124px;
+height: 24px;
+right: 64px;
+top: 42px;
+
+/* 16/16 Bold */
+
+font-family: 'Nunito';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+
+
+/* Gray/$-gray-400 Text */
+
+color: #535261;
+}
+
+.nav-link{
+
+height: 24px;
+
+/* 16/16 Bold */
+
+font-family: 'Nunito';
+font-style: normal;
+font-size: 16px;
+line-height: 10px;
+/* identical to box height, or 150% */
+
+
+/* White */
+
+color: #7E7D88;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+.nav-link:hover{
+    color: white;
+}
+
+.nav-item{
+
+align-items: center;
+padding: 12px 12px 12px 4px;
+gap: 8px;
+
+
+width: 200px;
+height: 48px;
+left: 12px;
+}
+.nav-item:hover{
+    background-color: #FF7506;
+    
+}
+
+.loguot{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px;
+    gap: 12px;
+    
+    position: absolute;
+    width: 176px;
+    height: 48px;
+    left: 12px;
+    bottom: 30px;
+    
+    /* Orange/$-Orange-50 */
+    
+    background: #FFF2E7;
+    border-radius: 8px;
+    color: orange;
+}
+.loguot form{
+    width: 176px;
+    height: 48px;
+    position: absolute;
+}
+.loguot button{
+height: 24px;
+
+/* 16/16 Semi */
+
+font-family: 'Nunito';
+font-style: normal;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+
+position: absolute;
+/* Orange/$-Orange-500 */
+
+color: #FF7506;
+bottom:10px;
+left: 10px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+.duongdan p{
+    color: #7E7D88;
+    font-family: 'Nunito';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+}
+.dropdown{
+    position: absolute;
+    width: 198px;
+    height: 48px;
+    
+}
+.dropdown a{
+    width: 200px;
+    height: 48px;
+    line-height: 30px;
+}
+.dropdown .dropdown-menu{
+    position: relative; 
+    width: 200px;
+    height: 144px;
+    margin-top:-50px;
+    
+
+border-radius: 0px 12px 12px 0px;
+}
+.dropdown .dropdown-menu a{
+    width: 200px;
+    height: 48px;
+   
+}
+.dropdown .dropdown-menu a:hover{
+    background-color: #FF7506;
+}
+
+.bieudocs{
+    width: 890px;
+height: 128px;
+}
+.bieudocs .row{
+    width: 890px;
+    height: 128px;
+    
+}
+.bieudocs .col-md-3{
+    position: relative;
+    float: left;
+    width: 201px;
+    height: 120px;
+    height: 128px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    margin-right: 20px;
+    
+    
+}
+.formdb{
+    width: 865px;
+    height: 440px;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    float: left;
+}
+.bieudocs .col-md-3 .col-md-12{
+    display: flex;
+}
+.bieudocs .col-md-3 .col-md-12 span{
+    position: absolute;
+    width: 41px;
+    height: 12px;
+    left: 133.8px;
+    top: 86.52px;
+    margin-top: 12px;
+    margin-left: 15px;
+
+    
+background: rgba(255, 149, 1, 0.15);
+border-radius: 7.18115px;
+float: right;
+
+}
+.bieudocs .col-md-3 .col-md-12 .span2{
+    background: rgba(231, 63, 63, 0.15);
+}
+.bieudocs .col-md-3 .col-md-12 span p{
+    width: 41px;
+    height: 12px;
+    position: absolute;
+    font-weight: 400;
+font-size: 8px;
+line-height: 12px;
+/* identical to box height, or 150% */
+
+
+/* Orange/$-Orange-400 */
+
+color: #FF9138;
+
+}
+.bieudocs .col-md-3 .icon{
+    margin-top: 10px;
+    width: 50px;
+}
+.bieudocs .col-md-3 p{
+    height: 48px;
+    width: 110px;
+    font-weight: 500;
+
+    
+}
+
+.bieudocs .col-md-3 a{
+    text-decoration: none;
+    color: black;
+    
+}
+.bieudocs .col-md-3 b{
+    font-size: 40px;
+}

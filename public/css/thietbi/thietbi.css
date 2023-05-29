@@ -1,0 +1,153 @@
+form{
+    width: 1112px;
+    height: 450px;
+    margin-top: 16px;
+}
+.table{  
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    
+    position: absolute;
+    width: 1112px;
+
+    
+    /* Shadowbox */
+    
+    filter: drop-shadow(2px 2px 8px rgba(232, 239, 244, 0.8));
+    border-radius: 12px;
+    background-color: white;
+  
+}
+
+thead th{
+    
+    height: 49px;
+    padding: 0px 8px;
+    gap: 10px;
+    background-color: #FF9138;
+}
+
+tbody td{
+    height: 49px;
+}
+
+.addtb{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 4px;
+    gap: 4px;
+    
+    position: absolute;
+    width: 80px;
+    height: 94px;
+    left: 1250px;
+    top: 235px;
+    
+    /* Orange/$-Orange-50 */
+    
+    background: #FFF2E7;
+    /* down */
+    
+    box-shadow: 0px 0px 6px #E7E9F2;
+    border-radius: 8px 0px 0px 8px;
+}
+.addtb a{
+    width: 72px;
+
+text-decoration: none;
+font-family: 'Nunito';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 19px;
+text-align: center;
+
+/* Orange/$-Orange-500 */
+
+color: #FF7506;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+
+
+
+
+ /* chi tiết thiết bị */
+
+.form-thietbi{
+    position: absolute;
+    width: 1252px;
+    height: 540px;
+
+    top: 156px;
+    
+    /* White */
+    
+    background: #FFFFFF;
+    /* Shadowbox */
+    
+    box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
+    border-radius: 16px;
+}
+
+.form-thietbi .row input{
+padding: 10px 270px 10px 12px;
+gap: 10px;
+width: 580px;
+height: 44px;
+}
+.form-thietbi .button button{
+    width: 147px;
+    height: 48px;
+    margin-top: 530px;
+    color: white;
+}
+.form-thietbi .button .button1{
+    
+    width: 147px;
+    height: 48px;
+    margin-top: 530px;
+    /* Orange/$-Orange-50 */
+    
+    background: #FFF2E7;
+    /* Orange/$-Orange-400 */
+  
+    border: 1.5px solid #FF9138;
+    /* down */
+    
+    box-shadow: 0px 0px 6px #E7E9F2;
+    border-radius: 8px;
+}
+.form-thietbi .button .button1 a{
+    color: #FF9138;
+}
+.form-thietbi b{
+    width: 150px;
+}
+.t{
+    display: flex;
+}
+.thietbi{
+    display: flex;
+}
+.thietbi .trangthaihd .form-select{
+    width: 300px;
+    height: 44px;
+}
+.thietbi .trangthaikn .form-select{
+    width: 300px;
+    height: 44px;
+}
+.thietbi .tukhoa input{
+    width: 300px;
+    height: 44px;
+}

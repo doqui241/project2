@@ -1,0 +1,44 @@
+.form-control{
+    width:400px;
+    height:44px;
+}
+button{
+    width:162px;
+    height:40px;
+    justify-content: center;
+    background-color: #FF7506;
+}
+.btn-warning{
+    background-color: #FF7506;
+    font-family: 'Nunito';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+
+
+/* white */
+
+color: #FFFFFF;
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+form label{
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    /* identical to box height, or 150% */
+
+
+    color: #37474F;
+}
+.dn{
+height: 753px;
+}
+.img img{
+height: 753px;
+}

@@ -1,0 +1,27 @@
+.thoigian input{
+    box-sizing: border-box;
+
+/* Auto layout */
+
+width: 150px;
+height: 44px;
+padding: 8px 16px;
+gap: 8px;
+
+background: #FFFFFF;
+/* gray blue/gray 2 - stroke */
+
+border: 1.5px solid #D4D4D7;
+border-radius: 8px;
+}
+.thoigian{
+    margin-right: 172px;
+}
+.trangthaidv .form-select{
+    width: 300px;
+    height: 44px;
+}
+.tukhoadv input{
+    width: 300px;
+height: 44px;
+}
