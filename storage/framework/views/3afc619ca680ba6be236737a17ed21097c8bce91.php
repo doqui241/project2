@@ -136,11 +136,12 @@
         </svg>
         
       <div class="avata">
-        <img src="<?php echo e(URL('img/avata.jpg')); ?>" alt="">
+        <a href="<?php echo e(route('dashboard.create')); ?>"><img src="<?php echo e(URL('img/avata.jpg')); ?>" alt=""></a>
+        
       </div>
       <p>Xin Chào</p>
       <div class="tennd">
-        <?php echo e(Auth::User()->username); ?>
+        <?php echo e(Auth::User()->name); ?>
 
       </div>
     </div>

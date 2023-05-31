@@ -9,37 +9,38 @@
         </div>
         <h4 style="color:#FF7506 " class=" mt-5">Quản lý thiết bị</h4>
         <div class="form-thietbi">
+            <?php echo csrf_field(); ?>
             <h5 class="p-3  mb-0 pb-0" style="color: #FF7506">Thông tin thiết bị</h5>
             <div class="row p-4 pt-2  pb-0">
                 <div class="col-md-6 p-3 pb-0">
                     <div class="mb-3 t">
-                        <b > Mã thiết bị:</b><p> KIO_01 </p>             
+                        <b > Mã thiết bị:</b><p><?php echo e($thietbi->matb); ?></p>             
                     </div>
                     <div class="mb-3 t">
-                        <b > Tên thiết bị:</b> <p>KIO_01 </p>                   
+                        <b > Tên thiết bị:</b> <p><?php echo e($thietbi->tentb); ?></p>                   
                     </div>
                     <div class="mb-3 t">
-                        <b > Địa Chỉ IP:</b> <p>KIO_01 </p>    
+                        <b > Địa Chỉ IP:</b> <p><?php echo e($thietbi->diachiip); ?></p>    
                     </div>
                     
                 </div>
                 <div class="col-md-6 p-3  pb-0">
                     <div class="mb-3 t">
-                        <b >Loại thiết bị:</b> <p>KIO_01 </p>    
+                        <b >Loại thiết bị:</b> <p><?php echo e($thietbi->loaitb); ?></p>    
                        
                     </div>
                     <div class="mb-3 t">
-                        <b > Tên đăng nhập:</b><p> KIO_01 </p>    
+                        <b > Tên đăng nhập:</b><p><?php echo e($thietbi->username); ?></p>    
                         
                     </div>
                     <div class="mb-3 t">
-                        <b > Mật khẩu:</b> <p>KIO_01 </p>    
+                        <b > Mật khẩu:</b> <p><?php echo e($thietbi->password); ?></p>    
                        
                     </div>
                 </div>
                 <div class="col-md-12 mt-0 pt">
                     <b > Dịch vụ sử dụng:</b>
-                    <p> KIO_01 </p>    
+                    <p><?php echo e($thietbi->dichvusd); ?></p>    
         
                 </div>
             </div>

@@ -8,7 +8,8 @@
             <p>Thiết Bị > <b style="color: #FF7506">Danh Sách Thiết Bị</b></p>
         </div>
         <h4 style="color:#FF7506 " class=" mt-5">Quản lý thiết bị</h4>
-        <form action="" method="post" class="addtb-form">
+        <form action="<?php echo e(route('thietbi.store')); ?>" method="POST" class="addtb-form">
+            <?php echo csrf_field(); ?>
             <div class="form-addtb">
                 <h4 class="p-3  mb-0 pb-0" style="color: #FF7506">Thông tin thiết bị</h4>
                 <div class="row p-4 pt-0  pb-0">
@@ -30,7 +31,7 @@
                     <div class="col-md-6 p-3  pb-0">
                         <div class="mb-3">
                             <label for="loaitb" class="form-label" >Loại thiết bị:*</label>
-                            <select class="form-select" placeholder="Chonk loại thiết bị" name="loaitb" style="width:580px">
+                            <select class="form-select" placeholder="Chọn loại thiết bị" name="loaitb" style="width:580px">
                                 <option>Kiosk</option>
                                 <option>Display counter</option>
                             </select>
@@ -41,12 +42,12 @@
                         </div>
                         <div class="mb-3">
                             <label for="" class="form-label" >Mật khẩu:*</label>
-                            <input type="password" class="form-control" id="" placeholder="Mật khẩu" name="password">
+                            <input type="text" class="form-control" id="" placeholder="Mật khẩu" name="password">
                         </div>
                     </div>
                     <div class="col-md-12 mt-0 pt">
                         <label for="" class="form-label" >Dịch vụ sử dụng:*</label>
-                        <input type="dinhvusd" class="form-control" style="width: 1200px;" id="" placeholder="Dịch vụ sử dụng" name="dinhvusd">
+                        <input type="dichvusd" class="form-control" style="width: 1200px;" id="" placeholder="Dịch vụ sử dụng" name="dichvusd">
                     </div>
                 </div>
             </div>

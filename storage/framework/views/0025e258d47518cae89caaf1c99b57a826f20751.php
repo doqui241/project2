@@ -45,6 +45,20 @@
                   </tr>
                 </thead>
                 <tbody>
+                    <?php $__currentLoopData = $thietbi; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <tr>
+                        <td><?php echo e($item->matb); ?></td>
+                        <td><?php echo e($item->tentb); ?></td>
+                        <td><?php echo e($item->diachiip); ?></td>
+                        <td>hoạt động</td>
+                        <td>kết nối</td>
+                        <td><?php echo e($item->dichvusd); ?></td>
+                        <td> <a href="<?php echo e(route('thietbi.show',$item->id)); ?>" class="">Chi tiết</a></td>
+                        <td>
+                            <a href="<?php echo e(route('thietbi.edit',$item->id)); ?>" class="">Cập nhật</a>
+                        </td>
+                    </tr>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     <tr>
                         <td>k1</td>
                         <td>kiok</td>
@@ -52,7 +66,7 @@
                         <td>hoạt động</td>
                         <td>kết nối</td>
                         <td>khám tim mạch</td>
-                        <td> <a href="" class="">Chi tiết</a></td>
+                        <td> <a href="<?php echo e(route('thietbi.edit',$item->id)); ?>" class="">Chi tiết</a></td>
                         <td>
                             <a href="" class="">Cập nhật</a>
                         </td>
