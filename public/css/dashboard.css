@@ -404,3 +404,51 @@ color: #FF9138;
 .bieudocs .col-md-3 b{
     font-size: 40px;
 }
+
+
+/* thông tin user */
+.form-ttuser{
+    position: absolute;
+    width: 1252px;
+    height: 380px;
+
+    top: 156px;
+    
+    /* White */
+    
+    background: #FFFFFF;
+    /* Shadowbox */
+    
+    box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
+    border-radius: 16px;
+}
+.form-ttuser .row{
+    width: 1252px;
+}
+.ttuser-form{
+    width: 1252px;
+}
+.ttuser-form img{
+    margin-top: 40px;
+    margin-left: 24px;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+  border-radius: 50%;
+}
+.ttuser-form h3{
+    width: 313px;
+    text-align: center;
+}
+.form-ttuser .row .col-md-9{
+    display: flex;
+}
+.form-ttuser .row .col-md-9 .col-md-6 input{
+    width: 384px;
+height: 44px;
+
+/* Gray/$-gray-50 */
+
+background: #EAEAEC;
+border-radius: 6px;
+}

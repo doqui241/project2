@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\Thietbi;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
@@ -31,7 +32,7 @@ class DashboardController extends Controller
      */
     public function create() 
     {
-        return view('dashboard.rightdb');
+        return view('thongtinuser');
     }
 
     /**
@@ -98,7 +99,7 @@ class DashboardController extends Controller
      */
     public function show(User $user) 
     {
-        return view('users.show', [
+        return view('thongtinuser', [
             'user' => $user
         ]);
     }

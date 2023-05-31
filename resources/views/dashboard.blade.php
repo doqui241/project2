@@ -138,11 +138,12 @@
         </svg>
         
       <div class="avata">
-        <img src="{{ URL('img/avata.jpg')}}" alt="">
+        <a href="{{route('dashboard.create')}}"><img src="{{ URL('img/avata.jpg')}}" alt=""></a>
+        
       </div>
       <p>Xin Chào</p>
       <div class="tennd">
-        {{ Auth::User()->username }}
+        {{ Auth::User()->name }}
       </div>
     </div>
 </body>

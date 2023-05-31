@@ -15,8 +15,10 @@
                             <label for="madv" id="" class="form-label text-center" ><b> Dịch vụ khách hàng lựa chọn:*</b></label>
                             <select class="form-select mx-auto d-block" style="width:400px;">
                                 <option>Tất Cả</option>
-                                <option>Kiosk</option>
-                                <option>Hệ thống</option>
+                                <option>Khám tim mạch</option>
+                                <option>Khám sản - phụ khoa</option>
+                                <option>Khám răng hàm mặt</option>
+                                <option>Khám tai mũi họng</option>
                             </select>
                             <div class="buttoncs mt-5">
                                 <div class="text-center mx-auto d-block mt-3">

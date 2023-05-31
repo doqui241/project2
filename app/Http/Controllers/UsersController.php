@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\Thietbi;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
@@ -96,7 +97,7 @@ class UsersController extends Controller
      */
     public function show(User $user) 
     {
-        return view('users.show', [
+        return view('thongtinuser', [
             'user' => $user
         ]);
     }
@@ -136,10 +137,20 @@ class UsersController extends Controller
      * 
      * @return \Illuminate\Http\Response
      */
-    public function destroy() 
+    public function destroy(Request $request) 
     {
-        Auth::login();
-        return redirect('/');
+        
+
+        $user = $request->user();
+
+        Auth::logout();
+
+        $user->delete();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return Redirect::to('/');
     }
 
 

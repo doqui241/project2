@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Thietbi;
 use Illuminate\Http\Request;
-use App\Http\Requests\StoreUserRequest;
-use App\Http\Requests\UpdateUserRequest;
+use App\Http\Requests\StoreThietbiRequest;
+use App\Http\Requests\UpdateThietbiRequest;
 
 class ThietbiController extends Controller
 {
@@ -16,7 +16,7 @@ class ThietbiController extends Controller
      */
     public function index() 
     {
-        $thietbi = User::latest()->paginate(5);
+        $thietbi = Thietbi::latest()->paginate(5);
 
         return view('thietbi.thietbi', compact('thietbi'))->with('i',(request()->input('page',1 )-1)*5);
     }
@@ -29,28 +29,29 @@ class ThietbiController extends Controller
     public function store(Request $request) 
     {
        
-        Sinhvien::create($request->all());
-        return redirect()->route('thietbi.index');
+        Thietbi::create($request->all());
+        return redirect()->route('Thietbi.index');
 
     }
 
-    public function show() 
+    public function show(Thietbi $thietbi) 
     {
-        return view('thietbi.chitiettb');
+        return view('thietbi.chitiettb', compact('thietbi'));
+        // return view('thietbi.chitiettb');
     }
 
 
     public function edit(Thietbi $thietbi) 
     {
-        return view('thietbi.edittb');
+        return view('thietbi.edittb', compact('thietbi'));
     }
 
-    public function update(User $users, UpdateUserRequest $request) 
+    public function update(Thietbi $thietbi, Request $request) 
     {
-        // $users->update($request->all());
+        $thietbi->update($request->all());
 
-        // return redirect()->route('users.index')
-        //     ->withSuccess(__('User updated successfully.'));
+        return redirect()->route('thietbi.index')
+            ->withSuccess(__('Thietbi updated successfully.'));
     }
 
     /**

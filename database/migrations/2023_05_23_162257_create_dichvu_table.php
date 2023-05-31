@@ -18,7 +18,7 @@ class CreateDichvuTable extends Migration
             $table->string('madv');
             $table->string('tendv');
             $table->string('mota');
-            $table->string('trangthai');
+            $table->string('trangthaihd');
             $table->timestamps();
         });
     }
