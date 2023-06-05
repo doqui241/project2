@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\Dichvu;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
@@ -17,7 +18,7 @@ class DichvuController extends Controller
      */
     public function index() 
     {
-        $dichvu = User::latest()->paginate(5);
+        $dichvu = Dichvu::latest()->paginate(5);
 
         return view('dichvu.dichvu', compact('dichvu'))->with('i',(request()->input('page',1 )-1)*5);
     }
@@ -30,7 +31,7 @@ class DichvuController extends Controller
     public function store(Request $request) 
     {
        
-        Sinhvien::create($request->all());
+        Dichvu::create($request->all());
         return redirect()->route('dichvu.index');
 
     }

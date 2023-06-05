@@ -40,26 +40,18 @@
                   </tr>
                 </thead>
                 <tbody>
+                    @foreach ($dichvu as $item)
                     <tr>
-                        <td>k1</td>
-                        <td>kiok</td>
-                        <td>111.222.333</td>
+                        <td>{{$item->madv}}</td>
+                        <td>{{$item->tendv}}</td>
+                        <td>{{$item->mota}}</td>
                         <td>hoạt động</td>
-                        
-                        <td> <a href="" class="">Chi tiết</a></td>
+                        <td> <a href="{{route('thietbi.show',$item->id)}}" class="">Chi tiết</a></td>
                         <td>
-                            <a href="" class="">Cập nhật</a>
+                            <a href="{{route('thietbi.edit',$item->id)}}" class="">Cập nhật</a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>k1</td>
-                        <td>kiok</td>
-                        <td>111.222.333</td>
-                        <td>hoạt động</td>
-                        
-                        <td> <a href="" class="">Chi tiết</a></td>
-                        <td><a href="" class="">Cập nhật</a></td>  
-                    </tr>               
+                @endforeach         
                     <tr>
                         <td>k1</td>
                         <td>kiok</td>

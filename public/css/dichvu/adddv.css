@@ -1,3 +1,23 @@
 #mota{
-    height: 137px;
+    height: 119px;
+}
+#madv{
+    height: 35px;
+}
+#tendv{
+    height: 35px;
+}
+.checkbox label {
+
+}
+#checkbox{
+width: 20px;
+height: 20px;
+margin-top: 20px;
+
+background: #FFFFFF;
+/* Blue */
+
+border: 1.5px solid #4277FF;
+border-radius: 4px;
 }
