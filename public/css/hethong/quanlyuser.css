@@ -1,0 +1,27 @@
+.quanlyuser{
+    display: flex;
+}
+.quanlyuser .tukhoa{
+    margin-left: 490px;
+}
+.form-register{
+    position: absolute;
+    width: 1252px;
+    height: 480px;
+
+    top: 156px;
+    
+    /* White */
+    
+    background: #FFFFFF;
+    /* Shadowbox */
+    
+    box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
+    border-radius: 16px;
+}
+.form-register .row input{
+padding: 10px 270px 10px 12px;
+gap: 10px;
+width: 580px;
+height: 40px;
+}

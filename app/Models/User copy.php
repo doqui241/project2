@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class Dichvu extends Authenticatable
+class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -18,12 +18,15 @@ class Dichvu extends Authenticatable
      * @var array<int, string>
      */
 
-    protected $table ='services';
+    protected $table ='users';
 
     protected $fillable = [
-        'madv',
-        'tendv',
-        'mota',
+        'img',
+        'name',
+        'username',
+        'email',
+        'sdt',
+        'password',
     ];
 
 }

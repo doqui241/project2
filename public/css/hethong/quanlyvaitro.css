@@ -1,0 +1,49 @@
+.quanlyvaitro .tukhoa{
+    margin-left: 810px;
+}
+.form-addvaitro{
+    position: absolute;
+    width: 1252px;
+    height: 480px;
+
+    top: 156px;
+    
+    /* White */
+    
+    background: #FFFFFF;
+    /* Shadowbox */
+    
+    box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
+    border-radius: 16px;
+}
+.form-addvaitro .chucnang{
+    position: absolute;
+width: 560px;
+height: 370px;
+
+top: 90px;
+
+/* Orange/$-Orange-50 */
+
+background: #FFF2E7;
+border-radius: 8px;
+}
+.form-addvaitro .chucnang #checkbox{
+
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    
+    background: #FFFFFF;
+    /* Blue */
+    
+    border: 1.5px solid #4277FF;
+    border-radius: 4px;
+}
+.form-addvaitro .chucnang label{
+    width: 500px;
+    height: 20px;
+    margin-left: 15px;
+    line-height: 30px;
+
+}

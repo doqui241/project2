@@ -36,24 +36,24 @@ class DichvuController extends Controller
 
     }
 
-    public function show() 
+    public function show(Dichvu $dichvu) 
     {
-        return view('dichvu.chitietdv');
+        return view('dichvu.chitietdv', compact('dichvu'));
     }
 
 
-    public function edit(User $users) 
+    public function edit(Dichvu $dichvu) 
     {
         return view('dichvu.editdv', compact('dichvu'));
     }
 
-    public function update(User $users, UpdateUserRequest $request) 
+    public function update(Dichvu $dichvu, Request $request) 
     {
-        $users->update($request->all());
+        $dichvu->update($request->all());
 
-        return redirect()->route('users.index')
-            ->withSuccess(__('User updated successfully.'));
+        return redirect()->route('dichvu.index');
     }
+
 
     /**
      * Delete user data

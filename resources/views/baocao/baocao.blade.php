@@ -30,48 +30,48 @@
                         <td>k1</td>
                         <td>kiok</td>
                         <td>111.222.333</td>
-                        <td>hoạt động</td>
-                        <td>hoạt động </td>
+                        <td>Đang chờ</td>
+                        <td>Kiosk</td>
                         
                     </tr>
                     <tr>
                         <td>k1</td>
                         <td>kiok</td>
                         <td>111.222.333</td>
-                        <td>hoạt động</td>
-                        <td>hoạt động </td>
+                        <td>Đang chờ</td>
+                        <td>Kiosk</td>
                         
                     </tr>
                     <tr>
                         <td>k1</td>
                         <td>kiok</td>
                         <td>111.222.333</td>
-                        <td>hoạt động</td>
-                        <td>hoạt động </td>
+                        <td>Đang chờ</td>
+                        <td>Kiosk</td>
                         
                     </tr>
                     <tr>
                         <td>k1</td>
                         <td>kiok</td>
                         <td>111.222.333</td>
-                        <td>hoạt động</td>
-                        <td>hoạt động </td>
+                        <td>Đang chờ</td>
+                        <td>Kiosk</td>
                         
                     </tr>
                     <tr>
                         <td>k1</td>
                         <td>kiok</td>
                         <td>111.222.333</td>
-                        <td>hoạt động</td>
-                        <td>hoạt động </td>
+                        <td>Đang chờ</td>
+                        <td>Kiosk</td>
                         
                     </tr>
                     <tr>
                         <td>k1</td>
                         <td>kiok</td>
                         <td>111.222.333</td>
-                        <td>hoạt động</td>
-                        <td>hoạt động </td>
+                        <td>Đang chờ</td>
+                        <td>Kiosk</td>
                         
                     </tr>
                                
