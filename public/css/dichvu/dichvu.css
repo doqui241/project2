@@ -27,6 +27,11 @@ height: 44px;
 }
 
 
+
+
+
+/* chi tiết dịch vụ */
+
 .form-showdv{
     position: absolute;
 width: 370px;
@@ -57,6 +62,34 @@ background: #FFFFFF;
 box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
 border-radius: 12px;
 }
+.form-dv .trangthai{
+    display: flex;
+}
+.form-dv .trangthai .trangthaidv .form-select{
+    width: 150px;
+}
+.form-dv .trangthai .thoigian{
+    width: 450px;
+    margin-right: 0px;
+  
+}
+.form-dv .trangthai .thoigian .input{
+    display: flex;
+}
+
+.form-dv table{
+    width: 720px;
+    border-radius: 12px;
+}
+
+
+
+
+
+
+
+
+
 
 .editdv{
     display: flex;
@@ -147,3 +180,4 @@ flex: none;
 order: 1;
 flex-grow: 0;
 }
+

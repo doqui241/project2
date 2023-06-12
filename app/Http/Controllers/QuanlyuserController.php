@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
-use App\Models\Thietbi;
+use App\Models\Role;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreThietbiRequest;
 use App\Http\Requests\UpdateThietbiRequest;
@@ -15,43 +15,44 @@ class QuanlyuserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index() 
-    {
-        $user = User::latest()->paginate(5);
-
-        return view('hethong.quanlyuser', compact('user'));
+    {   
+        $role = User::with('roles')->get();
+        // $user = User::all();
+        return view('user.quanlyuser', compact('role'));
     }
 
     public function create() 
-    {
-        return view('hethong.register');
+    {   
+        $role = Role::all();
+        return view('user.register',compact('role'));
     }
 
     public function store(Request $request) 
-    {
-       
-        Thietbi::create($request->all());
-        return redirect()->route('Thietbi.index');
+    {     
+        $role = Role::all();
+        User::create($request->all());
+        return redirect()->route('quanlyuser.index');
 
     }
 
-    public function show(Thietbi $thietbi) 
+    // public function show(Thietbi $thietbi) 
+    // {
+    //     return view('thietbi.chitiettb', compact('thietbi'));
+    //     // return view('thietbi.chitiettb');
+    // }
+
+
+    public function edit(User $user) 
     {
-        return view('thietbi.chitiettb', compact('thietbi'));
-        // return view('thietbi.chitiettb');
+        return view('user.edituser', compact('user'));
     }
 
-
-    public function edit(Thietbi $thietbi) 
+    public function update(User $user, Request $request) 
     {
-        return view('thietbi.edittb', compact('thietbi'));
-    }
+        $user->update($request->all());
 
-    public function update(Thietbi $thietbi, Request $request) 
-    {
-        $thietbi->update($request->all());
-
-        return redirect()->route('thietbi.index')
-            ->withSuccess(__('Thietbi updated successfully.'));
+        return redirect()->route('quanlyuser.index');
+         
     }
 
     /**

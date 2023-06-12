@@ -18,8 +18,7 @@ class CreateServicesTable extends Migration
             $table->string('ma_service');
             $table->string('name_service');
             $table->string('mota');
-            $table->unsignedBigInteger('id_status_hd');
-            $table->foreign('id_status_hd')->references('id')->on('status_activate');
+            $table->string('status_hd');
             $table->timestamps();
         });
     }

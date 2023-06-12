@@ -16,14 +16,14 @@ class NhatkyController extends Controller
      */
     public function index() 
     {
-        $user = User::latest()->paginate(5);
+        $user = User::all();
 
-        return view('hethong.nhatky', compact('user'));
+        return view('user.nhatky', compact('user'));
     }
 
     public function create() 
     {
-        return view('hethong.register');
+        return view('register');
     }
 
     public function store(Request $request) 

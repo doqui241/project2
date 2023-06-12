@@ -6,7 +6,8 @@ use App\Models\Device;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreDeviceRequest;
 use App\Http\Requests\UpdateDeviceRequest;
-
+use Auth;
+use Validator;
 class DeviceController extends Controller
 {
     /**
@@ -16,9 +17,9 @@ class DeviceController extends Controller
      */
     public function index() 
     {
-        $device = Device::latest()->paginate(5);
+        $device = Device::all();
 
-        return view('thietbi.thietbi', compact('device'))->with('i',(request()->input('page',1 )-1)*5);
+        return view('thietbi.thietbi', compact('device'));
     }
 
     public function create() 
@@ -30,7 +31,7 @@ class DeviceController extends Controller
     {
        
         Device::create($request->all());
-        return redirect()->route('Thietbi.index');
+        return redirect()->route('thietbi.index');
 
     }
 
@@ -41,17 +42,16 @@ class DeviceController extends Controller
     }
 
 
-    public function edit(Device $thietbi) 
+    public function edit(Device $device) 
     {
         return view('thietbi.edittb', compact('device'));
     }
 
     public function update(Device $device, Request $request) 
     {
-        $thietbi->update($request->all());
+        $device->update($request->all());
 
-        return redirect()->route('thietbi.index')
-            ->withSuccess(__('Thietbi updated successfully.'));
+        return redirect()->route('thietbi.index');
     }
 
     /**

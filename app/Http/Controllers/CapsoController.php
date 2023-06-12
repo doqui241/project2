@@ -35,10 +35,10 @@ class CapsoController extends Controller
 
     }
 
-    public function show() 
-    {
-        return view('thietbi.chitiettb');
-    }
+    // public function show(Capso $capso) 
+    // {
+    //     return view('capso.chitietcs', compact('capso'));
+    // }
 
 
     public function edit(User $users) 

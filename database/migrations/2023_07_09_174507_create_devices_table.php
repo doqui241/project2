@@ -22,10 +22,8 @@ class CreateDevicesTable extends Migration
             $table->string('dichvusd');
             $table->unsignedBigInteger('id_user');
             $table->foreign('id_user')->references('id')->on('users');
-            $table->unsignedBigInteger('id_status_complete');
-            $table->foreign('id_status_complete')->references('id')->on('status_complete');
-            $table->unsignedBigInteger('id_status_hd');
-            $table->foreign('id_status_hd')->references('id')->on('status_activate');
+            $table->unsignedBigInteger('status_kn');
+            $table->unsignedBigInteger('status_hd');
             $table->timestamps();
         });
     }

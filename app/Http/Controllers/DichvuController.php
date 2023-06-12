@@ -18,9 +18,9 @@ class DichvuController extends Controller
      */
     public function index() 
     {
-        $dichvu = Dichvu::latest()->paginate(5);
+        $dichvu = Dichvu::all();
 
-        return view('dichvu.dichvu', compact('dichvu'))->with('i',(request()->input('page',1 )-1)*5);
+        return view('dichvu.dichvu', compact('dichvu'));
     }
 
     public function create() 
@@ -39,6 +39,7 @@ class DichvuController extends Controller
     public function show(Dichvu $dichvu) 
     {
         return view('dichvu.chitietdv', compact('dichvu'));
+        
     }
 
 

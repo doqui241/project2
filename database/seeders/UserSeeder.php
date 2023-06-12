@@ -17,10 +17,9 @@ class UserSeeder extends Seeder
     {   
         $data=[
             'id' => 123,
-            'img' => '',
-            'name' => 'qui',
-            'username' => 'qui',
-            'email' => 'qui@gmail.com',
+            'name' => 'admin',
+            'username' => 'admin',
+            'email' => 'doqui241@gmail.com',
             'sdt' => '0942052939',
             'password' =>bcrypt('123456'),
         ]; 

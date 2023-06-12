@@ -18,17 +18,15 @@ class Device extends Authenticatable
      * @var array<int, string>
      */
 
-    protected $table ='devices';
 
     protected $fillable = [
         'ma_device',
         'name_device',
         'loai_device',
         'adress',
+        'username',
+        'password',
         'dichvusd',
-        'id_user',
-        'id_status_hd',
-        'id_status_complete',
     ];
 
 }
