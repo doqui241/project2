@@ -1,6 +1,12 @@
 
 @extends('dashboard')
-
+<style>
+    span{
+        width: 20px;
+        height:20px ;
+        background: red;
+    }
+</style>
 
 @section('content')
     <div class="container-fluid m-3">
@@ -42,7 +48,7 @@
             </div>
             <div class="tukhoa">
                 <p>Từ Khóa</p>
-                <input type="text" class="tk" name="" id="">
+                <input type="text" class="tk" style="width:245px" placeholder="Nhập từ khóa" name="" id="">
             </div>
         </div>
         <form action="" method="post">
@@ -57,7 +63,6 @@
                     <th>Trang thái</th>
                     <th>Nguồn cấp</th>
                     <th></th>
-                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -67,74 +72,40 @@
                         <td>kiok</td>
                         <td>111.222.333</td>
                         <td>hoạt động</td>
-                        <td>kết nối</td>
+                        <td>Đang chờ</td>
                         <td>khám tim mạch</td>
                         <td> <a href="" class="">Chi tiết</a></td>
-                        <td>
-                            <a href="" class="">Cập nhật</a>
-                        </td>
-                    </tr>
+                    </tr>              
                     <tr>
                         <td>k1</td>
                         <td>k1</td>
                         <td>kiok</td>
                         <td>111.222.333</td>
                         <td>hoạt động</td>
-                        <td>kết nối</td>
+                        <td>Đang chờ</td>
                         <td>khám tim mạch</td>
                         <td> <a href="" class="">Chi tiết</a></td>
-                        <td>
-                            <a href="" class="">Cập nhật</a>
-                        </td>
-                    </tr>
+                    </tr>              
                     <tr>
                         <td>k1</td>
                         <td>k1</td>
                         <td>kiok</td>
                         <td>111.222.333</td>
                         <td>hoạt động</td>
-                        <td>kết nối</td>
+                        <td>Đang chờ</td>
                         <td>khám tim mạch</td>
                         <td> <a href="" class="">Chi tiết</a></td>
-                        <td>
-                            <a href="" class="">Cập nhật</a>
-                        </td>
-                    </tr>
+                    </tr>              
                     <tr>
                         <td>k1</td>
                         <td>k1</td>
                         <td>kiok</td>
                         <td>111.222.333</td>
                         <td>hoạt động</td>
-                        <td>kết nối</td>
+                        <td>Đang chờ</td>
                         <td>khám tim mạch</td>
                         <td> <a href="" class="">Chi tiết</a></td>
-                        <td>
-                            <a href="" class="">Cập nhật</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>k1</td>
-                        <td>k1</td>
-                        <td>kiok</td>
-                        <td>111.222.333</td>
-                        <td>hoạt động</td>
-                        <td>kết nối</td>
-                        <td>khám tim mạch</td>
-                        <td> <a href="" class="">Chi tiết</a></td>
-                        <td><a href="" class="">Cập nhật</a></td>  
-                    </tr>               
-                    <tr>
-                        <td>k1</td>
-                        <td>k1</td>
-                        <td>kiok</td>
-                        <td>111.222.333</td>
-                        <td>hoạt động</td>
-                        <td>kết nối</td>
-                        <td>khám tim mạch</td>
-                        <td> <a href="" class="{{route('thietbi.create')}}">Chi tiết</a></td>
-                        <td><a href="{{route('thietbi.create')}}" class="">Cập nhật</a></td>  
-                    </tr>               
+                    </tr>              
                 </tbody>
               </table>
         </form>

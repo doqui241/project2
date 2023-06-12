@@ -27,7 +27,7 @@
             </div>
             <div class="tukhoa">
                 <p>Từ Khóa</p>
-                <input type="text" class="tk" placeholder="nhập từ khóa" name="" id="">
+                <input type="text" class="tk" name="" id="">
             </div>
         </div>
         <form action="" method="post">
@@ -45,22 +45,32 @@
                   </tr>
                 </thead>
                 <tbody>
-                    @foreach ($device as $item)
+                    @foreach ($thietbi as $item)
                     <tr>
-                        <td>{{$item->ma_device}}</td>
-                        <td>{{$item->name_device}}</td>
-                        <td>{{$item->adress}}</td>
-                        <td id="status_hdColumn">{{$item->status_hd}}</td>
-                        <td>{{$item->status_kn}}</td>
+                        <td>{{$item->matb}}</td>
+                        <td>{{$item->tentb}}</td>
+                        <td>{{$item->diachiip}}</td>
+                        <td>hoạt động</td>
+                        <td>kết nối</td>
                         <td>{{$item->dichvusd}}</td>
-                        
-                     
                         <td> <a href="{{route('thietbi.show',$item->id)}}" class="">Chi tiết</a></td>
                         <td>
                             <a href="{{route('thietbi.edit',$item->id)}}" class="">Cập nhật</a>
                         </td>
                     </tr>
                 @endforeach
+                    <tr>
+                        <td>k1</td>
+                        <td>kiok</td>
+                        <td>111.222.333</td>
+                        <td>hoạt động</td>
+                        <td>kết nối</td>
+                        <td>khám tim mạch</td>
+                        <td> <a href="{{route('thietbi.edit',$item->id)}}" class="">Chi tiết</a></td>
+                        <td>
+                            <a href="" class="">Cập nhật</a>
+                        </td>
+                    </tr>
                     <tr>
                         <td>k1</td>
                         <td>kiok</td>
@@ -91,6 +101,7 @@
                 Thêm thiết bị</a>
         </div>
     </div>
+    
 @endsection
 
 

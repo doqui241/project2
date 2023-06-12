@@ -8,7 +8,7 @@
             <p>Thiết Bị > Danh Sách Thiết Bị > <b style="color: #FF7506">Cập nhật thiết bị</b></p>
         </div>
         <h4 style="color:#FF7506 " class=" mt-5">Quản lý thiết bị</h4>
-        <form action="{{route('thietbi.update', $thietbi->id)}}" method="POST" class="edittb-form">
+        <form action="" method="POST" class="edittb-form">
             @csrf
             @method('PUT')
             <div class="form-edittb">
@@ -17,39 +17,38 @@
                     <div class="col-md-6 p-3 pb-0">
                         <div class="mb-3">
                             <label for="matb" class="form-label" >Mã thiết bị:*</label>
-                            <input type="matb" value="{{$thietbi->matb}}" class="form-control" id="" placeholder="Mã thiết bị" name="matb">
+                            <input type="matb" value="{{$device->ma_device}}" class="form-control" id="" placeholder="Mã thiết bị" name="ma_device">
                         </div>
                         <div class="mb-3">
                             <label for="tentb" class="form-label" >Tên thiết bị:*</label>
-                            <input type="tentb" value="{{$thietbi->tentb}}" class="form-control" id="" placeholder="Tên thiết bị" name="tentb">
+                            <input type="tentb" value="{{$device->name_device}}" class="form-control" id="" placeholder="Tên thiết bị" name="tentb">
                         </div>
                         <div class="mb-3">
                             <label for="diachiip" class="form-label" >Địa Chỉ IP:*</label>
-                            <input type="diachiip" value="{{$thietbi->diachiip}}" class="form-control" id="" placeholder="Địa Chỉ IP" name="diachiip">
+                            <input type="diachiip" value="{{$device->adress}}" class="form-control" id="" placeholder="Địa Chỉ IP" name="diachiip">
                         </div>
                         
                     </div>
                     <div class="col-md-6 p-3  pb-0">
                         <div class="mb-3">
                             <label for="loaitb" class="form-label" >Loại thiết bị:*</label>
-                            <select class="form-select" placeholder="Chonk loại thiết bị" name="loaitb" style="width:580px">
-                                <option>value="{{$thietbi->loaitb}}"</option>
+                            <select class="form-select" placeholder="Chonk loại thiết bị" value="{{$device->loai_device}}" name="loaitb" style="width:580px">>
                                 <option>Kiosk</option>
                                 <option>Display counter</option>
                             </select>
                         </div>
                         <div class="mb-3">
                             <label for="username" class="form-label" >Tên đăng nhập:*</label>
-                            <input type="username" value="{{$thietbi->username}}" class="form-control" id="" placeholder="Tên đăng nhập" name="username">
+                            <input type="username" value="{{$device->username}}" class="form-control" id="" placeholder="Tên đăng nhập" name="username">
                         </div>
                         <div class="mb-3">
                             <label for="" class="form-label" >Mật khẩu:*</label>
-                            <input type="password" value="{{$thietbi->password}}" class="form-control" id="" placeholder="Mật khẩu" name="password">
+                            <input type="password" value="{{$device->password}}" class="form-control" id="" placeholder="Mật khẩu" name="password">
                         </div>
                     </div>
                     <div class="col-md-12 mt-0 pt">
                         <label for="dichvusd" class="form-label" >Dịch vụ sử dụng:*</label>
-                        <input type="text" value="{{$thietbi->dichvusd}}" class="form-control" style="width: 1200px;" id="" placeholder="Dịch vụ sử dụng" name="dichvusd">
+                        <input type="text" value="{{$device->dichvusd}}" class="form-control" style="width: 1200px;" id="" placeholder="Dịch vụ sử dụng" name="dichvusd">
                     </div>
                 </div>
             </div>

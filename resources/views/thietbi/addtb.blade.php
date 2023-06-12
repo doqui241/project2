@@ -16,23 +16,23 @@
                     <div class="col-md-6 p-3 pb-0">
                         <div class="mb-3">
                             <label for="matb" class="form-label" >Mã thiết bị:*</label>
-                            <input type="matb" class="form-control" id="" placeholder="Mã thiết bị" name="matb">
+                            <input type="matb" class="form-control" id="" placeholder="Mã thiết bị" name="ma_device">
                         </div>
                         <div class="mb-3">
                             <label for="tentb" class="form-label" >Tên thiết bị:*</label>
-                            <input type="tentb" class="form-control" id="" placeholder="Tên thiết bị" name="tentb">
+                            <input type="tentb" class="form-control" id="" placeholder="Tên thiết bị" name="name_device">
                         </div>
                         <div class="mb-3">
                             <label for="diachiip" class="form-label" >Địa Chỉ IP:*</label>
-                            <input type="diachiip" class="form-control" id="" placeholder="Địa Chỉ IP" name="diachiip">
+                            <input type="diachiip" class="form-control" id="" placeholder="Địa Chỉ IP" name="adress">
                         </div>
                         
                     </div>
                     <div class="col-md-6 p-3  pb-0">
                         <div class="mb-3">
                             <label for="loaitb" class="form-label" >Loại thiết bị:*</label>
-                            <select class="form-select" placeholder="Chọn loại thiết bị" name="loaitb" style="width:580px">
-                                <option>Kiosk</option>
+                            <select class="form-select" placeholder="Chọn loại thiết bị" name="loai_device"  style="width:580px">
+                                <option>Kiosk</option>    
                                 <option>Display counter</option>
                             </select>
                         </div>
@@ -47,7 +47,15 @@
                     </div>
                     <div class="col-md-12 mt-0 pt">
                         <label for="" class="form-label" >Dịch vụ sử dụng:*</label>
-                        <input type="dichvusd" class="form-control" style="width: 1200px;" id="" placeholder="Dịch vụ sử dụng" name="dichvusd">
+                        <select class="form-select" type="text" placeholder="Chọn dịch vụ"  name="dichvusd"   style="width: 1200px;">
+                            <option>Khám tim mạch</option>    
+                            <option>Khám sản phụ khoa</option>    
+                            <option>Khám răng hàm mặt</option>    
+                            <option>khám tai mũi họng</option>    
+                            <option>Khám hô hấp</option>    
+                            <option>Khám tổng quát</option>    
+                        </select>
+                        {{-- <input type="text" class="form-control" style="width: 1200px;" id="" placeholder="Dịch vụ sử dụng" name="dichvusd"> --}}
                     </div>
                 </div>
             </div>

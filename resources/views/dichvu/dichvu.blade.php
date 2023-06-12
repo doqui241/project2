@@ -10,7 +10,7 @@
         <h4 style="color:#FF7506 " class=" mt-5">Quản lí dịch vụ</h4>
         <div class="trangthai">
             <div class="trangthaidv">
-                <p>Trạng thái hoạt động</p>
+                <p>Trạng thái</p>
                 <select class="form-select">
                     <option>Tất Cả</option>
                     <option>Hoạt động</option>
@@ -24,7 +24,7 @@
             </div>
             <div class="tukhoadv">
                 <p>Từ Khóa</p>
-                <input type="text" class="tk" name="" id="">
+                <input type="text" class="tk" placeholder="nhập từ khóa" name="" id="">
             </div>
         </div>
         <form action="" method="post">
@@ -42,13 +42,13 @@
                 <tbody>
                     @foreach ($dichvu as $item)
                     <tr>
-                        <td>{{$item->madv}}</td>
-                        <td>{{$item->tendv}}</td>
+                        <td>{{$item->ma_service}}</td>
+                        <td>{{$item->name_service}}</td>
                         <td>{{$item->mota}}</td>
                         <td>hoạt động</td>
-                        <td> <a href="{{route('thietbi.show',$item->id)}}" class="">Chi tiết</a></td>
+                        <td> <a href="{{route('dichvu.show',$item->id)}}" class="">Chi tiết</a></td>
                         <td>
-                            <a href="{{route('thietbi.edit',$item->id)}}" class="">Cập nhật</a>
+                            <a href="{{route('dichvu.edit',$item->id)}}" class="">Cập nhật</a>
                         </td>
                     </tr>
                 @endforeach         
@@ -61,24 +61,7 @@
                         <td> <a href="" class="">Chi tiết</a></td>
                         <td><a href="{{route('thietbi.create')}}" class="">Cập nhật</a></td>  
                     </tr>               
-                    <tr>
-                        <td>k1</td>
-                        <td>kiok</td>
-                        <td>111.222.333</td>
-                        <td>hoạt động</td>
-                        
-                        <td> <a href="" class="">Chi tiết</a></td>
-                        <td><a href="{{route('thietbi.create')}}" class="">Cập nhật</a></td>  
-                    </tr>               
-                    <tr>
-                        <td>k1</td>
-                        <td>kiok</td>
-                        <td>111.222.333</td>
-                        <td>hoạt động</td>
-                        
-                        <td> <a href="" class="">Chi tiết</a></td>
-                        <td><a href="{{route('thietbi.create')}}" class="">Cập nhật</a></td>  
-                    </tr>               
+                          
                 </tbody>
               </table>
         </form>

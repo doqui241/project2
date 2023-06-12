@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="{{ URL('css/baocao/addbc.css')}}">
     <link rel="stylesheet" href="{{ URL('css/baocao/baocao.css')}}">
     <link rel="stylesheet" href="{{ URL('css/baocao/editbc.css')}}">
+    <link rel="stylesheet" href="{{ URL('css/hethong/quanlyuser.css')}}">
+    <link rel="stylesheet" href="{{ URL('css/hethong/quanlyvaitro.css')}}">
+    <link rel="stylesheet" href="{{ URL('css/hethong/nhatky.css')}}">
 </head>
 <body>   
       <div class="left" style="width:200px;">
@@ -27,7 +30,7 @@
             <img src="{{ URL('img/logo.png')}}" class="mx-auto d-block mt-4" width="100px"  alt="">
             <ul class="nav flex-column mt-5">
               <li class="nav-item">
-                <a class="nav-link" href="{{route('dashboard.index')}}"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <a class="nav-link" href="{{route('Dashboard.index')}}"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M18.3333 9.08366V3.41699C18.3333 2.16699 17.8 1.66699 16.475 1.66699H13.1083C11.7833 1.66699 11.25 2.16699 11.25 3.41699V9.08366C11.25 10.3337 11.7833 10.8337 13.1083 10.8337H16.475C17.8 10.8337 18.3333 10.3337 18.3333 9.08366Z" stroke="#A9A9B0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M18.3333 16.583V15.083C18.3333 13.833 17.8 13.333 16.475 13.333H13.1083C11.7833 13.333 11.25 13.833 11.25 15.083V16.583C11.25 17.833 11.7833 18.333 13.1083 18.333H16.475C17.8 18.333 18.3333 17.833 18.3333 16.583Z" stroke="#A9A9B0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M8.75 10.917V16.5837C8.75 17.8337 8.21666 18.3337 6.89166 18.3337H3.525C2.2 18.3337 1.66666 17.8337 1.66666 16.5837V10.917C1.66666 9.66699 2.2 9.16699 3.525 9.16699H6.89166C8.21666 9.16699 8.75 9.66699 8.75 10.917Z" stroke="#A9A9B0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -95,9 +98,9 @@
                     Cài Đặt Hệ Thống :
                   </button> --}}
                   <ul class="dropdown-menu p-0">
-                    <li><a class="dropdown-item" href="#">Quản lý vai trò</a></li>
-                    <li><a class="dropdown-item" href="#">Quản lý tài khoản</a></li>
-                    <li><a class="dropdown-item" href="#">Nhật ký người dùng</a></li>
+                    <li><a class="dropdown-item" href="{{route('role.index')}}">Quản lý vai trò</a></li>
+                    <li><a class="dropdown-item" href="{{route('quanlyuser.index')}}">Quản lý tài khoản</a></li>
+                    <li><a class="dropdown-item" href="{{route('nhatky.index')}}">Nhật ký người dùng</a></li>
                   </ul>
                 </div>
                
@@ -105,9 +108,14 @@
               </li>
             </ul>
             <div class="loguot">
-              <form action="" method="post">
+              <form action="{{ route('logout') }}" method="post">
                 @csrf
-                <button class="btn mx-auto d-block mb-3"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {{-- <x-dropdown-link class="text-custom-button" :href="route('logout')" onclick="event.preventDefault();
+                this.closest('form').submit();">
+                {{ __('Đăng xuất') }}
+                </x-dropdown-link> --}}
+                <button class="btn mx-auto d-block mb-3" :href="route('logout')" onclick="event.preventDefault();
+                this.closest('form').submit();"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M13.3333 14.1663L17.5 9.99967L13.3333 5.83301" stroke="#FF7506" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M17.5 10H7.5" stroke="#FF7506" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M7.5 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V4.16667C2.5 3.72464 2.67559 3.30072 2.98816 2.98816C3.30072 2.67559 3.72464 2.5 4.16667 2.5H7.5" stroke="#FF7506" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -138,7 +146,7 @@
         </svg>
         
       <div class="avata">
-        <a href="{{route('dashboard.create')}}"><img src="{{ URL('img/avata.jpg')}}" alt=""></a>
+        <a href="{{route('Dashboard.create')}}"><img src="{{ URL('img/avata.jpg')}}" alt=""></a>
         
       </div>
       <p>Xin Chào</p>
@@ -148,3 +156,5 @@
     </div>
 </body>
 </html>
+
+
