@@ -67,7 +67,6 @@ class DichvuController extends Controller
     {
         $users ->delete();
 
-        return redirect()->route('users.index')
-            ->withSuccess(__('User deleted successfully.'));
+        return redirect()->route('users.index');
     }
 }

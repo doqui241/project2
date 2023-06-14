@@ -86,6 +86,13 @@
                 <br>
                 Tải về</a>
         </div>
+        <ul class="pagination justify-content-end" style="margin-right: 185px">
+            <li class="page-item"><a class="page-link" href="javascript:void(0);"><</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);">></a></li>
+          </ul>
     </div>
     
 @endsection

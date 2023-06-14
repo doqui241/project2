@@ -22,7 +22,7 @@ class Dichvu extends Authenticatable
 
     protected $fillable = [
         'ma_service',
-        'ten_service',
+        'name_service',
         'mota',
     ];
 

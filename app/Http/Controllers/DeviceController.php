@@ -8,6 +8,7 @@ use App\Http\Requests\StoreDeviceRequest;
 use App\Http\Requests\UpdateDeviceRequest;
 use Auth;
 use Validator;
+use Illuminate\Pagination\Paginator;
 class DeviceController extends Controller
 {
     /**
@@ -17,7 +18,7 @@ class DeviceController extends Controller
      */
     public function index() 
     {
-        $device = Device::all();
+        $device = Device::paginate(8);
 
         return view('thietbi.thietbi', compact('device'));
     }
@@ -35,20 +36,23 @@ class DeviceController extends Controller
 
     }
 
-    public function show(Device $device) 
+    public function show($id) 
     {
+        $device = Device::find($id);
         return view('thietbi.chitiettb', compact('device'));
         // return view('thietbi.chitiettb');
     }
 
 
-    public function edit(Device $device) 
+    public function edit($id) 
     {
+        $device = Device::find($id);
         return view('thietbi.edittb', compact('device'));
     }
 
-    public function update(Device $device, Request $request) 
+    public function update($id,Device $device, Request $request) 
     {
+        $device = Device::find($id);
         $device->update($request->all());
 
         return redirect()->route('thietbi.index');

@@ -42,13 +42,16 @@ class QuanlyuserController extends Controller
     // }
 
 
-    public function edit(User $user) 
+    public function edit($id) 
     {
+        $user = User::with('roles')->get();
+        $user = User::find($id);
         return view('user.edituser', compact('user'));
     }
 
-    public function update(User $user, Request $request) 
+    public function update($id,User $user, Request $request) 
     {
+        $user = User::find($id);
         $user->update($request->all());
 
         return redirect()->route('quanlyuser.index');
