@@ -43,7 +43,7 @@
                         <td>{{$item->sdt}}</td>
                         <td>{{$item->email}}</td>
                         <td>{{$item->roles->name_role}}</td>
-                        <td>hoạt động</td>
+                        <td>{{$item->status_hd}}</td>
                         <td>
                             <a href="{{route('quanlyuser.edit',$item->id)}}" class="">Cập nhật</a>
                         </td>
@@ -58,6 +58,13 @@
                 </svg><br>
                 Thêm tài khoản</a>
         </div>
+        <ul class="pagination justify-content-end" style="margin-right: 185px">
+            <li class="page-item"><a class="page-link" href="javascript:void(0);"><</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);">></a></li>
+          </ul>
     </div>
     
 @endsection

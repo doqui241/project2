@@ -29,10 +29,9 @@
                         </div>
                         <div class="mb-3">
                             <label for="diachiip" class="form-label" >Vai trò:*</label>
-                            <select class="form-select" name="id_role" style="width:580px">
-                                <option>Chọn vai trò</option>
-                                {{-- @foreach ($role as $role)
-                                <option value="{{ $role->id_role}}">{{ $role->name }}</option>
+                            <select class="form-select" value="{{$user->id_role}}" name="id_role" style="width:580px">
+                                {{-- @foreach ($user as $item)
+                                <option >{{$item->$name_role}}</option>
                                 @endforeach --}}
                             </select>
                         </div>
@@ -49,12 +48,12 @@
                         </div>
                         <div class="mb-3">
                             <label for="password_confirmation" class="form-label" >Nhập lại mật khẩu:*</label>
-                            <input type="text" class="form-control" id="" value="{{$user->password_confirmation}}" placeholder="Nhập lại mật khẩu" name="password_confirmation">
+                            <input type="text" class="form-control" id="" value="{{$user->password}}" placeholder="Nhập lại mật khẩu" name="password_confirmation">
                         </div>
                         <div class="mb-3">
                             <label for="status" class="form-label" >Trang thái:*</label>
-                            <select class="form-select" value="tất cả"  name="status_hd" style="width:580px">
-                                <option value="{{$user->status_hd}}"></option>
+                            <select class="form-select" value="{{$user->status_hd}}"  name="status_hd" style="width:580px">
+                                <option ></option>
                                 <option >Hoạt động</option>
                                 <option>Ngưng hoạt động</option>
                             </select>

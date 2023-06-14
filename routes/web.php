@@ -32,6 +32,7 @@ Route::resource('/baocao',BaocaoController::class);
 Route::resource('/quanlyuser',QuanlyuserController::class);
 Route::resource('/nhatky',NhatkyController::class);
 Route::resource('/role',RoleController::class);
+// Route::get('/thietbi/chitiettb/{id}',[DeviceController::class],'show')->name('thietbi.chitiettb');
 
 Route::get('/', function () {
     return view('auth.login');

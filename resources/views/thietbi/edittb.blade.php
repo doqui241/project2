@@ -8,7 +8,7 @@
             <p>Thiết Bị > Danh Sách Thiết Bị > <b style="color: #FF7506">Cập nhật thiết bị</b></p>
         </div>
         <h4 style="color:#FF7506 " class=" mt-5">Quản lý thiết bị</h4>
-        <form action="" method="POST" class="edittb-form">
+        <form action="{{route('thietbi.update', $device->id)}}" method="POST" class="edittb-form">
             @csrf
             @method('PUT')
             <div class="form-edittb">
@@ -21,18 +21,18 @@
                         </div>
                         <div class="mb-3">
                             <label for="tentb" class="form-label" >Tên thiết bị:*</label>
-                            <input type="tentb" value="{{$device->name_device}}" class="form-control" id="" placeholder="Tên thiết bị" name="tentb">
+                            <input type="tentb" value="{{$device->name_device}}" class="form-control" id="" placeholder="Tên thiết bị" name="name_device">
                         </div>
                         <div class="mb-3">
                             <label for="diachiip" class="form-label" >Địa Chỉ IP:*</label>
-                            <input type="diachiip" value="{{$device->adress}}" class="form-control" id="" placeholder="Địa Chỉ IP" name="diachiip">
+                            <input type="diachiip" value="{{$device->adress}}" class="form-control" id="" placeholder="Địa Chỉ IP" name="adress">
                         </div>
                         
                     </div>
                     <div class="col-md-6 p-3  pb-0">
                         <div class="mb-3">
                             <label for="loaitb" class="form-label" >Loại thiết bị:*</label>
-                            <select class="form-select" placeholder="Chonk loại thiết bị" value="{{$device->loai_device}}" name="loaitb" style="width:580px">>
+                            <select class="form-select" placeholder="Chonk loại thiết bị" value="{{$device->loai_device}}" name="loai_device" style="width:580px">>
                                 <option>Kiosk</option>
                                 <option>Display counter</option>
                             </select>

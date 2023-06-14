@@ -38,11 +38,11 @@
                         </div>
                         <div class="mb-3">
                             <label for="username" class="form-label" >Tên đăng nhập:*</label>
-                            <input type="username" class="form-control" id="" placeholder="Tên đăng nhập" name="username">
+                            <input type="username" class="form-control" id="" value="{{ Auth::User()->username }}" placeholder="Tên đăng nhập" name="username">
                         </div>
                         <div class="mb-3">
                             <label for="" class="form-label" >Mật khẩu:*</label>
-                            <input type="text" class="form-control" id="" placeholder="Mật khẩu" name="password">
+                            <input type="text" class="form-control" id="" placeholder="Mật khẩu" value="{{ Auth::User()->password }}" name="password">
                         </div>
                     </div>
                     <div class="col-md-12 mt-0 pt">

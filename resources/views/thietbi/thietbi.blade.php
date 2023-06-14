@@ -34,6 +34,7 @@
             <table class="table table-bordered" >
                 <thead>
                   <tr style="background-color: #FF9138;">
+  
                     <th>Mã thiết bị</th>
                     <th>Tên thiết bị</th>
                     <th>Địa chỉ IP</th>
@@ -47,10 +48,11 @@
                 <tbody>
                     @foreach ($device as $item)
                     <tr>
+        
                         <td>{{$item->ma_device}}</td>
                         <td>{{$item->name_device}}</td>
                         <td>{{$item->adress}}</td>
-                        <td id="status_hdColumn">{{$item->status_hd}}</td>
+                        <td>{{$item->status_hd}}</td>
                         <td>{{$item->status_kn}}</td>
                         <td>{{$item->dichvusd}}</td>
                         
@@ -60,29 +62,11 @@
                             <a href="{{route('thietbi.edit',$item->id)}}" class="">Cập nhật</a>
                         </td>
                     </tr>
-                @endforeach
-                    <tr>
-                        <td>k1</td>
-                        <td>kiok</td>
-                        <td>111.222.333</td>
-                        <td>hoạt động</td>
-                        <td>kết nối</td>
-                        <td>khám tim mạch</td>
-                        <td> <a href="" class="">Chi tiết</a></td>
-                        <td><a href="" class="">Cập nhật</a></td>  
-                    </tr>               
-                    <tr>
-                        <td>k1</td>
-                        <td>kiok</td>
-                        <td>111.222.333</td>
-                        <td>hoạt động</td>
-                        <td>kết nối</td>
-                        <td>khám tim mạch</td>
-                        <td> <a href="" class="{{route('thietbi.create')}}">Chi tiết</a></td>
-                        <td><a href="{{route('thietbi.create')}}" class="">Cập nhật</a></td>  
-                    </tr>               
+                @endforeach            
                 </tbody>
+               
               </table>
+            
         </form>
         <div class="addtb">
             <a href="{{route('thietbi.create')}}"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -90,6 +74,14 @@
                 </svg><br>
                 Thêm thiết bị</a>
         </div>
+        <ul class="pagination justify-content-end" style="margin-right: 185px">
+            {{-- {{ $device->links() }} --}}
+            <li class="page-item"><a class="page-link" href="javascript:void(0);"><</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);">></a></li>
+          </ul>
     </div>
 @endsection
 

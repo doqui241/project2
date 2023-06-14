@@ -16,11 +16,11 @@
                     <div class="col-md-6 p-3 pb-0">
                         <div class="mb-3">
                             <label for="madv" class="form-label" >Mã dịch vu:*</label>
-                            <input type="madv" class="form-control" id="madv" placeholder="Mã dịch vụ" name="madv">
+                            <input type="madv" class="form-control" id="madv" placeholder="Mã dịch vụ" name="ma_service">
                         </div>
                         <div class="mb-3">
                             <label for="tendv" class="form-label" >Tên dịch vu:*</label>
-                            <input type="tendv" class="form-control" id="tendv" placeholder="Tên dịch vụ" name="tendv">
+                            <input type="tendv" class="form-control" id="tendv" placeholder="Tên dịch vụ" name="name_service">
                         </div>
                   
                     </div>

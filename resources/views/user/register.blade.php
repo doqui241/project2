@@ -29,8 +29,6 @@
                         <div class="mb-3">
                             <label for="diachiip" class="form-label" >Vai trò:*</label>
                             <select class="form-select" value="chọn vai trò" name="id_role" style="width:580px">
-                                {{-- <option value="">Kế toán </option>
-                                <option value="">nhân viên</option> --}}
                                 @foreach ($role as $item)
                                 <option value="{{$item->id}}">{{$item->name_role}}</option>
                                 @endforeach
@@ -46,6 +44,7 @@
                         <div class="mb-3">
                             <label for="password" class="form-label" >Mật khẩu:*</label>
                             <input type="password" class="form-control" id="" placeholder="Tên đăng nhập" name="password">
+                            
                         </div>
                         <div class="mb-3">
                             <label for="password_confirmation" class="form-label" >Nhập lại mật khẩu:*</label>
@@ -54,8 +53,8 @@
                         <div class="mb-3">
                             <label for="status" class="form-label" >Trang thái:*</label>
                             <select class="form-select" value="tất cả" name="status_hd" style="width:580px">
-                                <option name="status_hd">Hoạt động</option>
-                                <option name="status_hd">Ngưng hoạt động</option>
+                                <option>Hoạt động</option>
+                                <option>Ngưng hoạt động</option>
                             </select>
                         </div>
                     </div>
