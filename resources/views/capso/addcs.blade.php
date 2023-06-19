@@ -30,9 +30,30 @@
             </div>
             
         </form>
+        
     </div>
     
 @endsection
+{{-- <div class="capso">
+    <div class="inso">
+        
+    </div>
+    <div class="so">
+            <div class="stt mt-5">
+                
+                <h3>Số thứ tự được cấp </h3>
+                <span>2001201</span>
+                <p>DV: Khám răng hàm mặt <b>(tại quày số 1)</b></p>
+            </div>
+            <div class="tgcap">
+                <span class="">
+                    <p>Thời gian cấp :</p>
+                    <p>Hạn sử dụng   :</p>
+                </span>
+                
+            </div>
+    </div>
+</div> --}}
 
 
 

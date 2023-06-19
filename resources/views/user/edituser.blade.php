@@ -8,7 +8,7 @@
             <p>Cài đặt hẹ thống > Quản lý tài khoản > <b style="color: #FF7506">Thêm tài khoản</b></p>
         </div>
         <h4 style="color:#FF7506 " class=" mt-5">Quản lý tài khoản</h4>
-        <form action="" method="POST" class="addtb-form">
+        <form action="{{route('quanlyuser.update', $user->id)}}" method="POST" class="addtb-form">
             @csrf
             @method('PUT')
             <div class="form-register">
@@ -29,10 +29,11 @@
                         </div>
                         <div class="mb-3">
                             <label for="diachiip" class="form-label" >Vai trò:*</label>
-                            <select class="form-select" value="{{$user->id_role}}" name="id_role" style="width:580px">
-                                {{-- @foreach ($user as $item)
-                                <option >{{$item->$name_role}}</option>
-                                @endforeach --}}
+                            <select class="form-select" value="" name="id_role" style="width:580px">
+                                <option>{{$user->roles->name_role}}</option>
+                                @foreach ($role  as $item)
+                                <option value="{{$item->id}}">{{$item->name_role}}</option>
+                                @endforeach
                             </select>
                         </div>
                         
@@ -53,7 +54,7 @@
                         <div class="mb-3">
                             <label for="status" class="form-label" >Trang thái:*</label>
                             <select class="form-select" value="{{$user->status_hd}}"  name="status_hd" style="width:580px">
-                                <option ></option>
+                                <option >{{$user->status_hd}}</option>
                                 <option >Hoạt động</option>
                                 <option>Ngưng hoạt động</option>
                             </select>

@@ -52,16 +52,7 @@
                         </td>
                     </tr>
                 @endforeach         
-                    <tr>
-                        <td>k1</td>
-                        <td>kiok</td>
-                        <td>111.222.333</td>
-                        <td>hoạt động</td>
-                        
-                        <td> <a href="" class="">Chi tiết</a></td>
-                        <td><a href="{{route('thietbi.create')}}" class="">Cập nhật</a></td>  
-                    </tr>               
-                          
+                
                 </tbody>
               </table>
         </form>
