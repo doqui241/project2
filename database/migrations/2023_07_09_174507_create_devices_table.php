@@ -20,8 +20,8 @@ class CreateDevicesTable extends Migration
             $table->string('adress');
             $table->string('loai_device');
             $table->string('dichvusd');
-            $table->unsignedBigInteger('id_user');
-            $table->foreign('id_user')->references('id')->on('users');
+            $table->string('username');
+            $table->string('password');
             $table->unsignedBigInteger('status_kn');
             $table->unsignedBigInteger('status_hd');
             $table->timestamps();

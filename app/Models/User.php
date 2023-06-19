@@ -31,7 +31,7 @@ class User extends Authenticatable
 
 
      public function roles(){
-        return $this->belongsTo(Role::class,'id');
+        return $this->belongsTo(Role::class,'id_role','id');
      }
     /**
      * The attributes that should be hidden for serialization.

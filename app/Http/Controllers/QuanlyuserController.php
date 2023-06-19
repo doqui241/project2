@@ -44,9 +44,9 @@ class QuanlyuserController extends Controller
 
     public function edit($id) 
     {
-        $user = User::with('roles')->get();
+        $role = Role::all();
         $user = User::find($id);
-        return view('user.edituser', compact('user'));
+        return view('user.edituser', compact('user'),compact('role'));
     }
 
     public function update($id,User $user, Request $request) 
