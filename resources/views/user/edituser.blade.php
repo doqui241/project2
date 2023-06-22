@@ -30,7 +30,7 @@
                         <div class="mb-3">
                             <label for="diachiip" class="form-label" >Vai trò:*</label>
                             <select class="form-select" value="" name="id_role" style="width:580px">
-                                <option>{{$user->roles->name_role}}</option>
+                                <option value="{{$user->id}}">{{$user->roles->name_role}}</option>
                                 @foreach ($role  as $item)
                                 <option value="{{$item->id}}">{{$item->name_role}}</option>
                                 @endforeach

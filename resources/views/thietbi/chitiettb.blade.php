@@ -40,7 +40,7 @@
                 </div>
                 <div class="col-md-12 mt-0 pt">
                     <b > Dịch vụ sử dụng:</b>
-                    <p>{{$device->dichvusd}}</p>    
+                    <p>{{$device->dichvu_sd->name_service}}</p>    
         
                 </div>
             </div>

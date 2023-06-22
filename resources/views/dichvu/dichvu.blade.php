@@ -1,6 +1,38 @@
 
 @extends('dashboard')
+<style>
+    form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+border-radius: 10px;
+  width: 300px;
+  background: white;
+  z-index: 1;
+  border: 1px gray solid;
+  position: absolute;
 
+}
+
+form.example button {
+    position: absolute;
+    background: white;
+    border: 0px;
+  padding: 10px;
+  color: black;
+  font-size: 17px;
+  right:4px;
+  top: 3px;
+  z-index: 2;
+}
+
+
+form.example{
+    position: absolute;
+    padding: 0px;
+    margin: 0;
+
+}
+</style>
 
 @section('content')
     <div class="container-fluid m-3">
@@ -24,7 +56,12 @@
             </div>
             <div class="tukhoadv">
                 <p>Từ Khóa</p>
-                <input type="text" class="tk" placeholder="nhập từ khóa" name="" id="">
+                <form action="" method="GET" class="example" style="width:300px;height:44px">
+                    <input type="text" placeholder="Search.." name="key">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                    {{-- <input type="text" class="tk" placeholder="nhập từ khóa" name="" id="">
+                    <button type="submit"></button> --}}
+                </form>               
             </div>
         </div>
         <form action="" method="post">
@@ -63,11 +100,12 @@
                 Thêm dịch vụ</a>
         </div>
         <ul class="pagination justify-content-end" style="margin-right: 185px">
-            <li class="page-item"><a class="page-link" href="javascript:void(0);"><</a></li>
+             {{ $dichvu->links() }}
+            {{-- <li class="page-item"><a class="page-link" href="javascript:void(0);"><</a></li>
             <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
             <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
             <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
-            <li class="page-item"><a class="page-link" href="javascript:void(0);">></a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);">></a></li> --}}
           </ul>
     </div>
     

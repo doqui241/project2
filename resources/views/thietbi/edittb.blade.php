@@ -48,7 +48,13 @@
                     </div>
                     <div class="col-md-12 mt-0 pt">
                         <label for="dichvusd" class="form-label" >Dịch vụ sử dụng:*</label>
-                        <input type="text" value="{{$device->dichvusd}}" class="form-control" style="width: 1200px;" id="" placeholder="Dịch vụ sử dụng" name="dichvusd">
+                        <select name="dichvusd" id="" class="form-control" style="width: 1200px;">
+                            <option value="{{$device->id}}">{{$device->dichvu_sd->name_service}}</option>
+                            @foreach ($service  as $item)
+                                <option value="{{$item->id}}">{{$item->name_service}}</option>
+                                @endforeach
+                        </select>
+                        {{-- <input type="text" value="{{$device->dichvu_sd->name_service}}" class="form-control" style="width: 1200px;" id="" placeholder="Dịch vụ sử dụng" name="dichvusd"> --}}
                     </div>
                 </div>
             </div>

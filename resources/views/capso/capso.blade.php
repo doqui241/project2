@@ -66,46 +66,18 @@
                   </tr>
                 </thead>
                 <tbody>
+                    @foreach ($capso as $item)
                     <tr>
-                        <td>k1</td>
-                        <td>k1</td>
-                        <td>kiok</td>
-                        <td>111.222.333</td>
-                        <td>hoạt động</td>
-                        <td>Đang chờ</td>
-                        <td>khám tim mạch</td>
-                        <td> <a href="" class="">Chi tiết</a></td>
-                    </tr>              
-                    <tr>
-                        <td>k1</td>
-                        <td>k1</td>
-                        <td>kiok</td>
-                        <td>111.222.333</td>
-                        <td>hoạt động</td>
-                        <td>Đang chờ</td>
-                        <td>khám tim mạch</td>
-                        <td> <a href="" class="">Chi tiết</a></td>
-                    </tr>              
-                    <tr>
-                        <td>k1</td>
-                        <td>k1</td>
-                        <td>kiok</td>
-                        <td>111.222.333</td>
-                        <td>hoạt động</td>
-                        <td>Đang chờ</td>
-                        <td>khám tim mạch</td>
-                        <td> <a href="" class="">Chi tiết</a></td>
-                    </tr>              
-                    <tr>
-                        <td>k1</td>
-                        <td>k1</td>
-                        <td>kiok</td>
-                        <td>111.222.333</td>
-                        <td>hoạt động</td>
-                        <td>Đang chờ</td>
-                        <td>khám tim mạch</td>
-                        <td> <a href="" class="">Chi tiết</a></td>
-                    </tr>              
+                        <td>{{$item->stt}}</td>
+                        <td>{{$item->user->name}}</td>
+                        <td>{{$item->dichvu->name_service}}</td>
+                        <td>{{$item->created_at}}</td>
+                        <td>{{$item->hsd}}</td>
+                        <td>{{$item->status}}</td>
+                        <td>{{$item->thietbi->name_device}}</td>
+                        <td> <a href="{{route('capso.show',$item->id)}}">Chi tiết</a></td>
+                    </tr>   
+                    @endforeach    
                 </tbody>
               </table>
         </form>
@@ -116,11 +88,12 @@
                 Cấp<br>  Số mới</a>
         </div>
         <ul class="pagination justify-content-end" style="margin-right: 185px">
-            <li class="page-item"><a class="page-link" href="javascript:void(0);"><</a></li>
+             {{ $capso->links() }}
+            {{-- <li class="page-item"><a class="page-link" href="javascript:void(0);"><</a></li>
             <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
             <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
             <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
-            <li class="page-item"><a class="page-link" href="javascript:void(0);">></a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);">></a></li> --}}
           </ul>
     </div>
     

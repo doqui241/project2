@@ -26,11 +26,11 @@
                     @csrf
                     <div class="mb-3 mt-3">
                         <label for="username" class="form-label" >Tên Đăng Nhập*:</label>
-                        <input type="username" class="form-control mx-auto d-block"   id="username" placeholder="username" name="username">
+                        <input type="username" class="form-control mx-auto d-block"   id="username" placeholder="username" name="username" required>
                     </div>
                     <div class="mb-3">
                         <label for="pwd" class="form-label" >Mật Khẩu*:</label>
-                        <input type="password" class="form-control mx-auto d-block" id="pwd" placeholder="Password" name="password">
+                        <input type="password" class="form-control mx-auto d-block" id="pwd" placeholder="Password" name="password" required>
                     </div>
                     {{-- @include('alert') --}}
                     <div class=" mb-3"> 

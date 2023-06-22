@@ -8,17 +8,16 @@
             <p>Cấp số > Danh sách cấp số > <b style="color: #FF7506">Cấp số mới</b></p>
         </div>
         <h4 style="color:#FF7506 " class=" mt-5">Quản lý cấp số</h4>
-        <form action="" method="post" class="addtb-form">
+        <form action="{{route('capso.store')}}" method="post" class="addtb-form">
             <div class="form-addtb">
                 <h4 class="p-3  mb-4 pb-0 text-center" style="color: #FF7506">Cấp Số Mới</h4>
                 <div class="row p-4 pt-0  pb-0">
                             <label for="madv" id="" class="form-label text-center" ><b> Dịch vụ khách hàng lựa chọn:*</b></label>
-                            <select class="form-select mx-auto d-block" style="width:400px;">
+                            <select class="form-select mx-auto d-block" name="id_service" style="width:400px;">
                                 <option>Tất Cả</option>
-                                <option>Khám tim mạch</option>
-                                <option>Khám sản - phụ khoa</option>
-                                <option>Khám răng hàm mặt</option>
-                                <option>Khám tai mũi họng</option>
+                                @foreach ($service as $item)
+                                    <option value="{{$item->id}}">{{$item->name_service}}</option>
+                                @endforeach
                             </select>
                             <div class="buttoncs mt-5">
                                 <div class="text-center mx-auto d-block mt-3">

@@ -1,6 +1,37 @@
 
 @extends('dashboard')
+<style>
+    form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+border-radius: 10px;
+  width: 300px;
+  background: white;
+  z-index: 1;
+  border: 1px gray solid;
+  /* position: absolute; */
 
+}
+
+form.example button {
+    position: absolute;
+    background: white;
+    border: 0px;
+  padding: 10px;
+  color: black;
+  font-size: 17px;
+    right: 190px;
+  z-index: 2;
+}
+
+
+form.example{
+    /* position: absolute; */
+    padding: 0px;
+    margin: 0;
+
+}
+</style>
 
 @section('content')
     <div class="container-fluid m-3">
@@ -11,7 +42,10 @@
         <div class="quanlyvaitro">
             <div class="tukhoa">
                 <p>Từ Khóa</p>
-                <input type="text" placeholder="Nhập từ khóa" class="tk" style="width:300px" name="" id="">
+                <form action="" method="get" class="example" style="width:300px;height:44px">
+                    <input type="text" class="tk" placeholder="Search.." name="key">
+                    <button type="submit" class="mt-1"><i class="fa fa-search"></i></button>
+                </form>           
             </div>
         </div>
         <form action="" method="post">
@@ -47,11 +81,12 @@
                 Thêm Vai trò</a>
         </div>
         <ul class="pagination justify-content-end" style="margin-right: 185px">
-            <li class="page-item"><a class="page-link" href="javascript:void(0);"><</a></li>
+             {{ $role->links() }}
+            {{-- <li class="page-item"><a class="page-link" href="javascript:void(0);"><</a></li>
             <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
             <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
             <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
-            <li class="page-item"><a class="page-link" href="javascript:void(0);">></a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);">></a></li> --}}
           </ul>
     </div>
     

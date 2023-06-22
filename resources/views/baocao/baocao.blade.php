@@ -26,55 +26,15 @@
                   </tr>
                 </thead>
                 <tbody>
+                    @foreach ($baocao as $item)
                     <tr>
-                        <td>k1</td>
-                        <td>kiok</td>
-                        <td>111.222.333</td>
-                        <td>Đang chờ</td>
-                        <td>Kiosk</td>
-                        
-                    </tr>
-                    <tr>
-                        <td>k1</td>
-                        <td>kiok</td>
-                        <td>111.222.333</td>
-                        <td>Đang chờ</td>
-                        <td>Kiosk</td>
-                        
-                    </tr>
-                    <tr>
-                        <td>k1</td>
-                        <td>kiok</td>
-                        <td>111.222.333</td>
-                        <td>Đang chờ</td>
-                        <td>Kiosk</td>
-                        
-                    </tr>
-                    <tr>
-                        <td>k1</td>
-                        <td>kiok</td>
-                        <td>111.222.333</td>
-                        <td>Đang chờ</td>
-                        <td>Kiosk</td>
-                        
-                    </tr>
-                    <tr>
-                        <td>k1</td>
-                        <td>kiok</td>
-                        <td>111.222.333</td>
-                        <td>Đang chờ</td>
-                        <td>Kiosk</td>
-                        
-                    </tr>
-                    <tr>
-                        <td>k1</td>
-                        <td>kiok</td>
-                        <td>111.222.333</td>
-                        <td>Đang chờ</td>
-                        <td>Kiosk</td>
-                        
-                    </tr>
-                               
+                        <td>{{$item->stt}}</td>
+                        <td>{{$item->dichvu->name_service}}</td>
+                        <td>{{$item->created_at}}</td>
+                        <td>{{$item->status}}</td>
+                        <td>{{$item->thietbi->name_device}}</td>
+                    </tr>   
+                    @endforeach     
                 </tbody>
               </table>
         </form>
@@ -87,11 +47,12 @@
                 Tải về</a>
         </div>
         <ul class="pagination justify-content-end" style="margin-right: 185px">
-            <li class="page-item"><a class="page-link" href="javascript:void(0);"><</a></li>
+            {{ $baocao->links() }}
+            {{-- <li class="page-item"><a class="page-link" href="javascript:void(0);"><</a></li>
             <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
             <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
             <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
-            <li class="page-item"><a class="page-link" href="javascript:void(0);">></a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);">></a></li> --}}
           </ul>
     </div>
     

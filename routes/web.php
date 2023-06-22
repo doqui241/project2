@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// use Illuminate\Support\Facades\Input;
+
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DeviceController;
@@ -21,7 +23,19 @@ use App\Http\Controllers\BaocaoController;
 use App\Http\Controllers\QuanlyuserController;
 use App\Http\Controllers\NhatkyController;
 use App\Http\Controllers\RoleController;
-// use App\Http\Controllers\LoguotController;
+
+
+
+// use Illuminate\Http\Request;
+// Route::get("/timkiem", function(Request $request){ 
+//   $tukhoa = ($request->has('tukhoa'))? $request->query('tukhoa'):"";
+//   $tukhoa = trim(strip_tags($tukhoa));
+//   $listsp=[];
+//   if ($tukhoa!=""){
+//     $listsp = DB::table("service")->where("name_service", "like", "%$tukhoa%")->get();
+//   }
+//   return view('timkiem', ['tukhoa'=> $tukhoa , 'listsp'=>$listsp]);
+// });
 
 Route::resource('/login',UsersController::class);
 Route::resource('/Dashboard',DashboardController::class);
@@ -32,7 +46,7 @@ Route::resource('/baocao',BaocaoController::class);
 Route::resource('/quanlyuser',QuanlyuserController::class);
 Route::resource('/nhatky',NhatkyController::class);
 Route::resource('/role',RoleController::class);
-// Route::get('/thietbi/chitiettb/{id}',[DeviceController::class],'show')->name('thietbi.chitiettb');
+
 
 Route::get('/', function () {
     return view('auth.login');

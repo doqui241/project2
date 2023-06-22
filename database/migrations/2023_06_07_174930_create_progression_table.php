@@ -16,12 +16,20 @@ class CreateProgressionTable extends Migration
         Schema::create('progression', function (Blueprint $table) {
             $table->id();
             $table->string('stt');
-            $table->string('ten_kh');
-            $table->string('id_service');
+            $table->unsignedBigInteger('ten_kh');
+            $table->foreign('ten_kh')->references('id')->on('users');
+            $table->unsignedBigInteger('id_service');
+            $table->foreign('id_service')->references('id')->on('services');
             $table->string('time_cap');
             $table->string('hsd');
             $table->string('status_progression');
-            $table->string('nguoncao');
+            // $table->string('nguoncao');
+            $table->unsignedBigInteger('nguoncao');
+            $table->foreign('nguoncao')->references('id')->on('devices');
+            $table->unsignedBigInteger('sdt');
+            $table->foreign('sdt')->references('id')->on('users');
+            $table->unsignedBigInteger('email');
+            $table->foreign('email')->references('id')->on('users');
             $table->timestamps();
         });
     }
