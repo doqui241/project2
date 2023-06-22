@@ -28,5 +28,8 @@ class Device extends Authenticatable
         'password',
         'dichvusd',
     ];
+    public function dichvu_sd(){
+        return $this->belongsTo(Dichvu::class,'dichvusd','id');
+     }
 
 }

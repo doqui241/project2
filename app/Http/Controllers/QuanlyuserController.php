@@ -17,7 +17,10 @@ class QuanlyuserController extends Controller
     public function index() 
     {   
         $role = User::with('roles')->get();
-        // $user = User::all();
+        $role = User::paginate(8);
+        if($key = request()->key){
+            $role = User::where('name','like', '%'.$key.'%')->paginate(8);
+        }
         return view('user.quanlyuser', compact('role'));
     }
 

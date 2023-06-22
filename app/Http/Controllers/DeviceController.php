@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Device;
+use App\Models\Dichvu;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreDeviceRequest;
 use App\Http\Requests\UpdateDeviceRequest;
@@ -18,14 +19,19 @@ class DeviceController extends Controller
      */
     public function index() 
     {
+        
+        $device = Device::with('dichvu_sd')->get();
         $device = Device::paginate(8);
-
+        if($key = request()->key){
+            $device = Device::where('name_device','like', '%'.$key.'%')->paginate(8);
+        }
         return view('thietbi.thietbi', compact('device'));
     }
 
     public function create() 
     {
-        return view('thietbi.addtb');
+        $device = Dichvu::all();
+        return view('thietbi.addtb',compact('device'));
     }
 
     public function store(Request $request) 
@@ -46,8 +52,9 @@ class DeviceController extends Controller
 
     public function edit($id) 
     {
+        $service = Dichvu::all();
         $device = Device::find($id);
-        return view('thietbi.edittb', compact('device'));
+        return view('thietbi.edittb', compact('device'),compact('service'));
     }
 
     public function update($id,Device $device, Request $request) 

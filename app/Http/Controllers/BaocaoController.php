@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\Dichvu;
+use App\Models\Capso;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
@@ -17,27 +19,31 @@ class BaocaoController extends Controller
      */
     public function index() 
     {
-        $baocao = User::latest()->paginate(5);
 
-        return view('baocao.baocao', compact('baocao'))->with('i',(request()->input('page',1 )-1)*5);
+        $baocao = Capso::paginate(8);
+
+        return view('baocao.baocao', compact('baocao'));
     }
 
     public function create() 
     {
-        return view('baocao.addbc');
+        $service = Dichvu::all();
+        return view('capso.addcs',compact('service'));
     }
 
     public function store(Request $request) 
     {
        
-        Sinhvien::create($request->all());
-        return redirect()->route('sinhvien.index');
+        Capso::create($request->all());
+        return ;
+        // return redirect()->route('sinhvien.index');
 
     }
 
-    public function show() 
+    public function show($id) 
     {
-        return view('thietbi.chitiettb');
+        $capso = Capso::find($id);
+        return view('capso.chitietcs', compact('capso'));
     }
 
 

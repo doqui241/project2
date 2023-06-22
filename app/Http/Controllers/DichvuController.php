@@ -16,10 +16,13 @@ class DichvuController extends Controller
      * 
      * @return \Illuminate\Http\Response
      */
-    public function index() 
+    public function index(Request $request) 
     {
-        $dichvu = Dichvu::all();
-
+        // dd(request()->key);
+        $dichvu = Dichvu::paginate(5);
+        if($key = request()->key){
+            $dichvu = Dichvu::where('name_service','like', '%'.$key.'%')->paginate(5);
+        }
         return view('dichvu.dichvu', compact('dichvu'));
     }
 

@@ -12,8 +12,10 @@ class RoleController extends Controller
 
     public function index() 
     {
-        $role = Role::all();
-
+        $role = Role::paginate(8);
+        if($key = request()->key){
+            $role = Role::where('name_role','like', '%'.$key.'%')->paginate(8);
+        }
         return view('role.quanlyvaitro', compact('role'));
     }
 

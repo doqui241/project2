@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\Dichvu;
+use App\Models\Capso;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
@@ -17,28 +19,31 @@ class CapsoController extends Controller
      */
     public function index() 
     {
-        $capso = User::latest()->paginate(5);
 
-        return view('capso.capso', compact('capso'))->with('i',(request()->input('page',1 )-1)*5);
+        $capso = Capso::paginate(8);
+
+        return view('capso.capso', compact('capso'));
     }
 
     public function create() 
     {
-        return view('capso.addcs');
+        $service = Dichvu::all();
+        return view('capso.addcs',compact('service'));
     }
 
     public function store(Request $request) 
     {
        
-        Sinhvien::create($request->all());
-        return redirect()->route('sinhvien.index');
+        Capso::create($request->all());
+        return redirect()->route('capso.index');
 
     }
 
-    // public function show(Capso $capso) 
-    // {
-    //     return view('capso.chitietcs', compact('capso'));
-    // }
+    public function show($id) 
+    {
+        $capso = Capso::find($id);
+        return view('capso.chitietcs', compact('capso'));
+    }
 
 
     public function edit(User $users) 
