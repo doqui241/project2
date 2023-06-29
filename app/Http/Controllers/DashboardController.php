@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
-use App\Models\Thietbi;
+use App\Models\Device;
+use App\Models\Dichvu;
+use App\Models\Capso;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use Illuminate\Support\Facades\DB;
 use Auth;
 use Validator;
+use Carbon\Carbon;
 
 class DashboardController extends Controller
 {
@@ -18,8 +22,37 @@ class DashboardController extends Controller
      */
     public function index() 
     {
+        
+        $data['device'] = DB::table('devices')->count('id');
+        $data['device_status1'] = DB::table('devices')->Where('status_hd', 'Hoạt động')->count();
+        $data['device_status2'] = DB::table('devices')->Where('status_hd', 'Ngưng hoạt động')->count();
 
-        return view('dashboard.maindb');
+
+        $data['service'] = DB::table('services')->count('id');
+        $data['service_status1'] = DB::table('services')->Where('status_hd', 'Hoạt động')->count();
+        $data['service_status2'] = DB::table('services')->Where('status_hd', 'Ngưng hoạt động')->count();
+
+
+        $data['capso'] = DB::table('progression')->count('id');
+        $data['capso_status1'] = DB::table('progression')->Where('status', 'Đang chờ')->count();
+        $data['capso_status2'] = DB::table('progression')->Where('status', 'Đã sử dụng')->count();
+        $data['capso_status3'] = DB::table('progression')->Where('status', 'Bỏ qua')->count();
+        // dd($id,$device,$dichvu,$capso);
+
+        
+    
+        $chart = Capso::select('id','time_start')->get()->groupBy(function($chart){
+            return Carbon::parse($chart->time_start)->format('d');
+        });
+        // dd($chart);
+        $days=[];
+        $dayCount = [];
+        foreach ($chart as $day => $value) {
+            $days[] = $day;
+            $dayCount[] = count($value);
+        }
+        // dd($day, $dayCount);
+        return view('dashboard.maindb',$data,['chart' => $chart,'days' => $day,'dayCount' => $dayCount]);
 
 
     }

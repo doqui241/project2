@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Dichvu;
 use App\Models\Capso;
+use App\Models\Rule;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use Auth;
+use Illuminate\Support\Str;
 use Validator;
+use Carbon\Carbon;
 
 class CapsoController extends Controller
 {
@@ -19,9 +22,10 @@ class CapsoController extends Controller
      */
     public function index() 
     {
-
         $capso = Capso::paginate(8);
-
+        if($key = request()->key){
+            $capso = Capso::where('stt','like', '%'.$key.'%')->paginate(8);
+        }
         return view('capso.capso', compact('capso'));
     }
 
@@ -32,10 +36,38 @@ class CapsoController extends Controller
     }
 
     public function store(Request $request) 
-    {
+    {   
        
-        Capso::create($request->all());
-        return redirect()->route('capso.index');
+        $request->validate([
+            'id_service'=>'required|exists:services,id',
+        ]);
+
+        $service= Dichvu::find($request->id_service);
+    
+
+        $rule = $service->rule_progression;
+       
+        $last_progression= Capso::latest('id')->first();
+
+        if($rule->check_prefix == 1){
+           
+            $nextId = $last_progression ? $last_progression->id +1 : $rule->start;
+
+            $nextCode=$service->ma_service.Str::padLeft($nextId, 4, '0');
+            
+        }
+
+        date_default_timezone_set('Asia/Ho_Chi_Minh');
+        $day = Carbon::now();
+        $end_time  = $day->copy()->addHours(24);
+        $progression=Capso::create([
+        'id_service' => $service->id,
+        'stt' => $nextCode,
+        'time_start'=> $day,
+        'hsd'=> $end_time,
+    ]);
+        $service = Dichvu::all();
+        return view('capso.addcs',compact('service'))->with(['progression' => $progression]);
 
     }
 

@@ -23,8 +23,12 @@ class Capso extends Authenticatable
     protected $fillable = [
         'stt',
         'id_service',        
+        'time_start',        
         'hsd',
     ];
+
+    protected $attributes = ['ten_kh'=> 2 ,'nguoncap'=> 3 ];
+
     public function user(){
         return $this->belongsTo(User::class,'ten_kh','id');
     }
@@ -34,7 +38,7 @@ class Capso extends Authenticatable
     public function thietbi(){
         return $this->belongsTo(Device::class,'nguoncap','id');
     } 
-
+   
 
     //  public function roles(){
 

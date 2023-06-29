@@ -24,6 +24,18 @@ class Dichvu extends Authenticatable
         'ma_service',
         'name_service',
         'mota',
+        'id_progression',
     ];
+    public $timestamps = false;
+
+    protected $attributes = ['id_progression'=> 1];
+    
+    public function cap_so(){
+        return $this->hasMany(Capso::class,'id');
+     }
+    public function rule_progression()
+     {
+         return $this->belongsTo(Rule::class,'id_progression','id');
+     }
 
 }

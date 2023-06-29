@@ -25,4 +25,7 @@ class Role extends Authenticatable
         'mota_role',
     ];
 
+    public function users(){
+        return $this->hasMany(User::class,'id');
+     }
 }

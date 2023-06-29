@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Thietbi;
+use App\Models\Diary;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreThietbiRequest;
 use App\Http\Requests\UpdateThietbiRequest;
@@ -16,9 +17,9 @@ class NhatkyController extends Controller
      */
     public function index() 
     {
-        $user = User::all();
+        $diary = Diary::paginate(8);
 
-        return view('user.nhatky', compact('user'));
+        return view('user.nhatky', compact('diary'));
     }
 
     public function create() 

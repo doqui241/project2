@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Role;
+use App\Models\Diary;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreThietbiRequest;
 use App\Http\Requests\UpdateThietbiRequest;
+use Auth;
+use Carbon\Carbon;
 
 class QuanlyuserController extends Controller
 {
@@ -33,7 +36,14 @@ class QuanlyuserController extends Controller
     public function store(Request $request) 
     {     
         $role = Role::all();
-        User::create($request->all());
+        $user = User::create($request->all());
+        $day = Carbon::now('Asia/Ho_Chi_Minh');
+        Diary::create([
+            'username' =>Auth::User()->username,
+            'id_adress' => '123.22.33.45',
+            'created_at' => $day,
+            'action' => 'Thêm User ID:'.$user->id,
+        ]);
         return redirect()->route('quanlyuser.index');
 
     }
@@ -56,7 +66,13 @@ class QuanlyuserController extends Controller
     {
         $user = User::find($id);
         $user->update($request->all());
-
+        $day = Carbon::now('Asia/Ho_Chi_Minh');
+        Diary::create([
+            'username' =>Auth::User()->username,
+            'id_adress' => '123.22.33.45',
+            'created_at' => $day,
+            'action' => 'Update User ID:'.$user->id,
+        ]);
         return redirect()->route('quanlyuser.index');
          
     }

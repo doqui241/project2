@@ -20,15 +20,11 @@ class CreateProgressionTable extends Migration
             $table->foreign('ten_kh')->references('id')->on('users');
             $table->unsignedBigInteger('id_service');
             $table->foreign('id_service')->references('id')->on('services');
+            $table->datetime('time_start');
             $table->datetime('hsd');
             $table->string('status');
-            // $table->string('nguoncao');
             $table->unsignedBigInteger('nguoncap');
             $table->foreign('nguoncap')->references('id')->on('devices');
-            $table->unsignedBigInteger('sdt');
-            $table->foreign('sdt')->references('id')->on('users');
-            $table->unsignedBigInteger('email');
-            $table->foreign('email')->references('id')->on('users');
             $table->timestamps();
         });
     }

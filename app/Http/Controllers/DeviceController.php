@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Device;
 use App\Models\Dichvu;
+use App\Models\Diary;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreDeviceRequest;
 use App\Http\Requests\UpdateDeviceRequest;
 use Auth;
 use Validator;
+use Carbon\Carbon;
 use Illuminate\Pagination\Paginator;
 class DeviceController extends Controller
 {
@@ -23,7 +25,10 @@ class DeviceController extends Controller
         $device = Device::with('dichvu_sd')->get();
         $device = Device::paginate(8);
         if($key = request()->key){
-            $device = Device::where('name_device','like', '%'.$key.'%')->paginate(8);
+            $device = Device::where('name_device','like', '%'.$key.'%')->orWhere('adress','like', '%'.$key.'%')->orWhere('status_hd','like', '%'.$key.'%')->paginate(8);
+        }
+        if($hd = request()->hd){
+            $device = Device::where('status_hd','like', '%'.$hd.'%')->paginate(8);
         }
         return view('thietbi.thietbi', compact('device'));
     }
@@ -36,8 +41,25 @@ class DeviceController extends Controller
 
     public function store(Request $request) 
     {
-       
-        Device::create($request->all());
+        $request->validate([
+            'name_device' => 'required',
+            'ma_device' => 'required',
+            'adress' => 'required',
+            'username' => 'required',
+            'password' => 'required',
+            'dichvusd'=>'required',
+            'loai_device'=>'required',
+
+        ]);
+        $device = Device::create($request->all());
+        $day = Carbon::now('Asia/Ho_Chi_Minh');
+        Diary::create([
+            'username' =>Auth::User()->username,
+            'id_adress' => '123.22.33.44',
+            'created_at' => $day,
+            'action' => 'Thêm Thiết bị ID:'.$device->id,
+        ]);
+        
         return redirect()->route('thietbi.index');
 
     }
@@ -61,7 +83,14 @@ class DeviceController extends Controller
     {
         $device = Device::find($id);
         $device->update($request->all());
-
+        $day = Carbon::now('Asia/Ho_Chi_Minh');
+        Diary::create([
+            'username' =>Auth::User()->username,
+            'id_adress' => '123.22.33.45',
+            'created_at' => $day,
+            'action' => 'Update Thiết bị ID:'.$device->id,
+        ]);
+        
         return redirect()->route('thietbi.index');
     }
 

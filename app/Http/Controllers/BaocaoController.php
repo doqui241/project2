@@ -9,6 +9,7 @@ use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use Auth;
 use Validator;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class BaocaoController extends Controller
 {
@@ -23,7 +24,18 @@ class BaocaoController extends Controller
         $baocao = Capso::paginate(8);
 
         return view('baocao.baocao', compact('baocao'));
+
     }
+    public function export() 
+    {
+        // $baocao = Capso::all();
+        $baocao = Capso::get();
+        $pdf = Pdf::loadView('baocao.export', ['baocao' => $baocao]);
+        // dd($pdf);
+        return $pdf->download('report.pdf');
+
+    }
+
 
     public function create() 
     {
