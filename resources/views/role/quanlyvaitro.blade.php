@@ -52,8 +52,8 @@ form.example{
             <table class="table table-bordered" >
                 <thead>
                   <tr style="background-color: #FF9138;">
-                    <th>Mã dịch vụ</th>
-                    <th>Tên dịch vụ</th>
+                    <th>Tên Vai Trò</th>
+                    <th>Số Người Dùng</th>
                     <th>Mô tả</th>
                     <th>Trang thái hoạt động</th>
 
@@ -63,7 +63,7 @@ form.example{
                     @foreach ($role as $item)
                     <tr>
                         <td>{{$item->name_role}}</td>
-                        <td>7</td>
+                        <td>{{$item->users_count}}</td>
                         <td>{{$item->mota_role}}</td>
                         <td>
                             <a href="{{route('role.edit',$item->id)}}" class="">Cập nhật</a>
@@ -81,7 +81,7 @@ form.example{
                 Thêm Vai trò</a>
         </div>
         <ul class="pagination justify-content-end" style="margin-right: 185px">
-             {{ $role->links() }}
+             {{-- {{ $role->links() }} --}}
             {{-- <li class="page-item"><a class="page-link" href="javascript:void(0);"><</a></li>
             <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
             <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>

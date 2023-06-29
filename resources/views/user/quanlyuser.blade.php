@@ -78,7 +78,14 @@ form.example{
                         <td>{{$item->sdt}}</td>
                         <td>{{$item->email}}</td>
                         <td>{{$item->roles->name_role}}</td>
-                        <td>{{$item->status_hd}}</td>
+                        <td>
+                            @if ($item->status_hd == 'Hoạt động')
+                            <i class='bx bxs-circle' style='color:#00ff00'  ></i>
+                            @else
+                            <i class='bx bxs-circle' style='color:red'  ></i>
+                            @endif
+                            {{ $item->status_hd }}
+                         </td>
                         <td>
                             <a href="{{route('quanlyuser.edit',$item->id)}}" class="">Cập nhật</a>
                         </td>

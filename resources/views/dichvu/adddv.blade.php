@@ -33,28 +33,32 @@
                     <h4 class="p-3 pt-0  mb-0 pb-0" style="color: #FF7506">Quy tắc cấp số</h4>
                     <div class="row">
                     <div class="col-md-12 checkbox">
-                       <input type="checkbox" name="checkbox" id="checkbox">
+                        <input type="hidden" value="0" name="check_auto">
+                       <input type="checkbox" name="check_auto" value="1" id="checkbox">
                        <label for=""><b>Tăng tự động từ: </b>
-                        <input type="text" value="0001" style="width: 61px;" class="mx-2 p-2 rounded-3 text-center">
+                        <input type="text" name="start" value="0001" style="width: 61px;" class="mx-2 p-2 rounded-3 text-center">
                         đến:
-                        <input type="text" value="9999" style="width: 61px;" class="mx-2 p-2 rounded-3 text-center">
+                        <input type="text" name="end" value="9999" style="width: 61px;" class="mx-2 p-2 rounded-3 text-center">
                        </label>
                     </div>
                     <div class="col-md-12 checkbox">
-                       <input type="checkbox" name="checkbox" id="checkbox">
+                        <input type="hidden" value="0" name="check_prefix">
+                       <input type="checkbox" value="1" name="check_prefix" id="checkbox">
                        <label class="form-check-label" for="flexCheckDefault1">
                       <b>  Prefix:</b>
-                    </label><input type="text" value="0001" style="width: 61px; margin-left: 90px" class="p-2 rounded-3 text-center">
+                    </label><input type="text" name="prefix" value="0001" style="width: 61px; margin-left: 90px" class="p-2 rounded-3 text-center">
                     </div>
                     <div class="col-md-12 checkbox">
-                       <input type="checkbox" name="checkbox" id="checkbox">
+                        <input type="hidden" value="0" name="check_surfix">
+                       <input type="checkbox" value="1" name="check_surfix" id="checkbox">
                        <label for=""><b>Surfix: </b>                       
                        </label>
-                       <input type="text" value="0001" style="width: 61px; margin-left: 85px" class="p-2 rounded-3 text-center">
+                       <input type="text" name="surfix" value="0001" style="width: 61px; margin-left: 85px" class="p-2 rounded-3 text-center">
                     </div>
                     <div class="col-md-12 checkbox">
-                       <input type="checkbox" name="checkbox" id="checkbox">
-                       <label for=""><b>Resert mỗi ngày</b>
+                        <input type="hidden" value="0" name="check_reset">
+                       <input type="checkbox" value="1" name="check_reset" id="checkbox">
+                       <label for=""><b>Reset mỗi ngày</b>
                        </label>
                     </div>
                     
@@ -68,6 +72,9 @@
                 </div>                    
             </div>
         </form>
+        @if ($errors->any())  @foreach ($errors->all() as $error)
+                      {{ $error }}
+                    @endforeach   @endif
     </div>
     
 @endsection

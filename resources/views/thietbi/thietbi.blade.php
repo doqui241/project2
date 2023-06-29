@@ -43,10 +43,10 @@ form.example{
         <div class="thietbi">
             <div class="trangthaihd" >
                 <p>Trạng thái hoạt động</p>
-                <select class="form-select">
+                <select class="form-select" name="hd">
                     <option>Tất Cả</option>
-                    <option >Hoạt động</option>
-                    <option>Ngưng hoạt động</option>
+                    <option value="Hoạt động" >Hoạt động</option>
+                    <option value="Ngưng hoạt động">Ngưng hoạt động</option>
                 </select>
             </div>
             <div class="trangthaikn" style="margin-right:148px ">
@@ -87,8 +87,22 @@ form.example{
                         <td>{{$item->ma_device}}</td>
                         <td>{{$item->name_device}}</td>
                         <td>{{$item->adress}}</td>
-                        <td>{{$item->status_hd}}</td>
-                        <td>{{$item->status_kn}}</td>
+                        <td>
+                            @if ($item->status_hd == 'Hoạt động')
+                            <i class='bx bxs-circle' style='color:#00ff00'  ></i>
+                            @else
+                            <i class='bx bxs-circle' style='color:red'  ></i>
+                            @endif
+                            {{ $item->status_hd }}
+                         </td>
+                        <td>
+                            @if ($item->status_kn == 'Kết nối')
+                            <i class='bx bxs-circle' style='color:#00ff00'  ></i>
+                            @else
+                            <i class='bx bxs-circle' style='color:red'  ></i>
+                            @endif
+                            {{ $item->status_kn }}
+                        </td>
                         <td>{{$item->dichvu_sd->name_service}}</td>                       
                      
                         <td> <a href="{{route('thietbi.show',$item->id)}}" class="">Chi tiết</a></td>

@@ -1,4 +1,6 @@
-
+td{
+    font-size: 14px;
+}
 body{
     width: 100%;
     background-color: #F6F6F6;
@@ -176,19 +178,11 @@ width: 124px;
 height: 24px;
 right: 64px;
 top: 42px;
-
-/* 16/16 Bold */
-
 font-family: 'Nunito';
 font-style: normal;
 font-weight: 700;
 font-size: 16px;
 line-height: 24px;
-/* identical to box height, or 150% */
-
-
-/* Gray/$-gray-400 Text */
-
 color: #535261;
 }
 
@@ -450,3 +444,26 @@ height: 44px;
 background: #EAEAEC;
 border-radius: 6px;
 }
+
+
+/* biểu đồ */
+
+.formdb .col-md-8{
+   margin-left: 20px;
+}
+.formdb .col-md-3 .dropdown{
+    position: absolute;
+    right: 370px;
+}
+.formdb .col-md-3 .dropdown button{
+    width: 100px;
+    /* background-color: ; */
+}
+.formdb .col-md-3 .dropdown ul li{
+    width: 100px;
+}
+.formdb .col-md-3 .dropdown ul{
+    width: 100px;
+}
+
+

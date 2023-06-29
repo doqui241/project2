@@ -9,6 +9,7 @@
         </div>
         <h4 style="color:#FF7506 " class=" mt-5">Quản lý cấp số</h4>
         <form action="{{route('capso.store')}}" method="post" class="addtb-form">
+            @csrf
             <div class="form-addtb">
                 <h4 class="p-3  mb-4 pb-0 text-center" style="color: #FF7506">Cấp Số Mới</h4>
                 <div class="row p-4 pt-0  pb-0">
@@ -31,15 +32,49 @@
         </form>
         
     </div>
-    
+    @if(isset($progression))
+
+    <div class="capso_inso modal" id="exampleModal" >
+       
+        <div class="so" role="document">
+           
+                <div class="stt mt-5">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>    
+                    <h3>Số thứ tự được cấp </h3>
+                    <span>{{ $progression->stt }}</span>
+                    <p>DV: {{ $progression->dichvu->name_service }} <b>(tại quày số 1)</b></p>
+                </div>
+                <div class="tgcap">
+                    <span class="">
+                        <p>Thời gian cấp : {{ $progression->time_start }}</p>
+                        <p>Hạn sử dụng   : {{ $progression->hsd }}</p>
+                    </span>
+                    
+                </div>
+     
+               
+        </div>
+         <div class="inso">
+            
+        </div>
+        <script>
+            $('#exampleModal').modal()
+        </script>
+                      
+                            @endif
 @endsection
+
+
 {{-- <div class="capso">
     <div class="inso">
         
     </div>
     <div class="so">
+       
             <div class="stt mt-5">
-                
+                <a href="{{route('capso.index')}}">X</a>        
                 <h3>Số thứ tự được cấp </h3>
                 <span>2001201</span>
                 <p>DV: Khám răng hàm mặt <b>(tại quày số 1)</b></p>
@@ -51,10 +86,10 @@
                 </span>
                 
             </div>
+ 
+           
     </div>
 </div> --}}
-
-
 
 
 

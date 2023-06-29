@@ -47,6 +47,8 @@ Route::resource('/quanlyuser',QuanlyuserController::class);
 Route::resource('/nhatky',NhatkyController::class);
 Route::resource('/role',RoleController::class);
 
+Route::get('/export',[BaocaoController::class,'export'])->name('export');
+
 
 Route::get('/', function () {
     return view('auth.login');

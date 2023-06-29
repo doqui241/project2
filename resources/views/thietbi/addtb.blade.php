@@ -50,17 +50,9 @@
                         <select class="form-select" type="text" placeholder="Chọn dịch vụ"  name="dichvusd"   style="width: 1200px;">
                                 @foreach ($device as $item)
                                 <option value="{{$item->id}}">{{$item->name_service}}</option>
-
                                 @endforeach
-                            
-                           
-                            {{-- <option>Khám tim mạch</option>    
-                            <option>Khám sản phụ khoa</option>    
-                            <option>Khám răng hàm mặt</option>    
-                            <option>khám tai mũi họng</option>    
-                            <option>Khám hô hấp</option>    
-                            <option>Khám tổng quát</option>     --}}
                         </select>
+                        
                         {{-- <input type="text" class="form-control" style="width: 1200px;" id="" placeholder="Dịch vụ sử dụng" name="dichvusd"> --}}
                     </div>
                 </div>

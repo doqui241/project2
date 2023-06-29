@@ -9,7 +9,7 @@ border-radius: 10px;
   background: white;
   z-index: 1;
   border: 1px gray solid;
-  position: absolute;
+  /* position: absolute; */
 
 }
 
@@ -20,20 +20,18 @@ form.example button {
   padding: 10px;
   color: black;
   font-size: 17px;
-  right:4px;
-  top: 3px;
+    right: 190px;
   z-index: 2;
 }
 
 
 form.example{
-    position: absolute;
+    /* position: absolute; */
     padding: 0px;
     margin: 0;
 
 }
 </style>
-
 @section('content')
     <div class="container-fluid m-3">
         <div class="duongdan " style="margin-top:24px;">
@@ -58,9 +56,7 @@ form.example{
                 <p>Từ Khóa</p>
                 <form action="" method="GET" class="example" style="width:300px;height:44px">
                     <input type="text" placeholder="Search.." name="key">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                    {{-- <input type="text" class="tk" placeholder="nhập từ khóa" name="" id="">
-                    <button type="submit"></button> --}}
+                    <button type="submit"><i class="fa fa-search"></i></button>                
                 </form>               
             </div>
         </div>
@@ -82,7 +78,14 @@ form.example{
                         <td>{{$item->ma_service}}</td>
                         <td>{{$item->name_service}}</td>
                         <td>{{$item->mota}}</td>
-                        <td>hoạt động</td>
+                        <td>
+                            @if ($item->status_hd == 'Hoạt động')
+                            <i class='bx bxs-circle' style='color:#00ff00'  ></i>
+                            @else
+                            <i class='bx bxs-circle' style='color:red'  ></i>
+                            @endif
+                            {{ $item->status_hd }}
+                           </td>
                         <td> <a href="{{route('dichvu.show',$item->id)}}" class="">Chi tiết</a></td>
                         <td>
                             <a href="{{route('dichvu.edit',$item->id)}}" class="">Cập nhật</a>

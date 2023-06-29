@@ -1,7 +1,13 @@
 
 @extends('dashboard')
 
-
+<style>
+    .pagination{
+        position: absolute;
+        bottom: 0px;
+        right: 15px;
+    }
+</style>
 @section('content')
     <div class="container-fluid m-3">
         <div class="duongdan " style="margin-top:24px;">
@@ -27,15 +33,15 @@
                 <h5 class="p-3  mb-0 pb-0" style="color: #FF7506">Quy tắc cấp số</h5>
                 <div class="col-md-12 mt-0 pt">
                     <label for="" class="mb-2"><b>Tăng tự động: </b>
-                        <input type="text" value="0001" style="width: 61px;" class="mx-2 p-2 rounded-3 text-center">
+                        <input type="text" value="001" style="width: 61px;" class="mx-2 p-2 rounded-3 text-center">
                         đến:
-                        <input type="text" value="9999" style="width: 61px;" class="mx-2 p-2 rounded-3 text-center">
+                        <input type="text" value="999" style="width: 61px;" class="mx-2 p-2 rounded-3 text-center">
                        </label>
 
                        <label class="form-check-label" for="flexCheckDefault1">
                         <b>  Prefix:</b>
                       </label><input type="text" value="0001" style="width: 61px; margin-left: 70px" class="p-2 rounded-3 text-center"> <br>
-                      <label for=""><b>Resert mỗi ngày</b>
+                      <label for=""><b>Reset mỗi ngày</b>
                       </label> <br>
                       <p>Ví dụ : 201 - 2001</p>
                     </div>
@@ -72,36 +78,25 @@
                   </tr>
                 </thead>
                 <tbody>
-                    {{-- @foreach ($dichvu as $item)
+                    @foreach ($dichvu->cap_so as $item)
                     <tr>
-                        <td>{{$item->ma_service}}</td>
-                        <td>{{$item->name_service}}</td>
+                        <td>{{$item->stt}}</td>
+                        <td>{{$item->status}}</td>
                 
                     </tr>
-                    @endforeach          --}}
-                    <tr>
-                        <td>k1</td>
-                        <td>hoạt động</td>
-                    </tr>               
-                    <tr>
-                        <td>k1</td>
-                        <td>hoạt động</td>
-                    </tr>               
-                    <tr>
-                        <td>k1</td>
-                        <td>hoạt động</td>
-                    </tr>               
-                    <tr>
-                        <td>k1</td>
-                        <td>hoạt động</td>
-                    </tr>               
-                    <tr>
-                        <td>k1</td>
-                        <td>hoạt động</td>
-                    </tr>               
+                    @endforeach         
+                    
                           
                 </tbody>
               </table>
+              <ul class="pagination justify-content-end">
+                {{-- {{ $dichvu->links() }} --}}
+               {{-- <li class="page-item"><a class="page-link" href="javascript:void(0);"><</a></li>
+               <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+               <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+               <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+               <li class="page-item"><a class="page-link" href="javascript:void(0);">></a></li> --}}
+             </ul>
         </form>               
         </div>
         <div class="editdv">

@@ -38,7 +38,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="matb" class="form-label" >Vai trò</label>
-                                <input type="matb" class="form-control" id="" placeholder=" {{ Auth::User()->vaitro }}" name="matb">
+                                <input type="matb" class="form-control" id="" placeholder=" {{ Auth::User()->roles->name_role }}" name="matb">
                             </div>
                         </div>
                     </div>

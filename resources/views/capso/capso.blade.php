@@ -6,6 +6,37 @@
         height:20px ;
         background: red;
     }
+    form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+border-radius: 10px;
+  width: 300px;
+  background: white;
+  z-index: 1;
+  border: 1px gray solid;
+  /* position: absolute; */
+
+}
+
+form.example button {
+    position: absolute;
+    background: white;
+    border: 0px;
+  padding: 10px;
+  color: black;
+  font-size: 17px;
+  margin-top: 3px;
+    right: 190px;
+  z-index: 2;
+}
+
+
+form.example{
+    /* position: absolute; */
+    padding: 0px;
+    margin: 0;
+
+}
 </style>
 
 @section('content')
@@ -48,7 +79,10 @@
             </div>
             <div class="tukhoa">
                 <p>Từ Khóa</p>
-                <input type="text" class="tk" style="width:245px" placeholder="Nhập từ khóa" name="" id="">
+                <form action="" method="GET" class="example" style="width:245px;height:44px">
+                    <input type="text" placeholder="Search.." name="key" style="width:245px;">
+                    <button type="submit"><i class="fa fa-search"></i></button>                
+                </form>       
             </div>
         </div>
         <form action="" method="post">
@@ -71,9 +105,18 @@
                         <td>{{$item->stt}}</td>
                         <td>{{$item->user->name}}</td>
                         <td>{{$item->dichvu->name_service}}</td>
-                        <td>{{$item->created_at}}</td>
+                        <td>{{$item->time_start}}</td>
                         <td>{{$item->hsd}}</td>
-                        <td>{{$item->status}}</td>
+                        <td> 
+                            @if ($item->status == 'Đang chờ')
+                            <i class='bx bxs-circle' style='color:#4264e0'  ></i>
+                            @elseif($item->status == 'Đã sử dụng')
+                            <i class='bx bxs-circle' style='color:#9e9fa4'  ></i>
+                            @else
+                            <i class='bx bxs-circle' style='color:red'  ></i>
+                            @endif
+                            {{ $item->status }}
+                        </td>
                         <td>{{$item->thietbi->name_device}}</td>
                         <td> <a href="{{route('capso.show',$item->id)}}">Chi tiết</a></td>
                     </tr>   
